@@ -14,7 +14,7 @@ export default new Vuetify({
         options: {
             customProperties: true,
         },
-        dark: false,
+        dark: true,
         themes: {
             light: {
                 primary: "#D5D5D5",
@@ -24,8 +24,8 @@ export default new Vuetify({
                 anchor: "#DF3578",
             },
             dark: {
-                primary: "#484646",
-                secondary: "#6D5860",
+                primary: "#292643",
+                secondary: "#44426E",
                 accent: "#DF3578",
                 error: "#b71c1c",
                 anchor: "#DF3578",
