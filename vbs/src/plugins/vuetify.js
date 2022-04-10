@@ -14,7 +14,7 @@ export default new Vuetify({
         options: {
             customProperties: true,
         },
-        dark: true,
+        dark: false,
         themes: {
             light: {
                 primary: "#D5D5D5",

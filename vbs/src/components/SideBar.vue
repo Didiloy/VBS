@@ -19,6 +19,15 @@
           <v-avatar size="40">
             <v-icon class="grey--text" x-large> account_circle </v-icon>
           </v-avatar>
+          <div class="d-flex justify-space-around">
+            <div class="mt-4">
+              <p class="grey--text">Dark mode</p>
+            </div>
+            <div>
+              <v-switch inset class="" @click="darkMode()"></v-switch>
+            </div>
+          </div>
+
           <div class="" v-if="computedConnected">
             <v-btn class="accent">
               <v-icon class="white--text pr-2"> logout</v-icon>
@@ -56,6 +65,9 @@ export default {
     },
   },
   methods: {
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
     setConnected: function () {
       //Je verifie si il y a des éléments dans le local storage
       //Si il n'y en a pas j'ajoute un objet pour me permettre de dire si il est connecté
