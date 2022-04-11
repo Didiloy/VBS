@@ -35,7 +35,7 @@
             </v-btn>
           </div>
           <div v-else>
-            <v-btn class="accent">
+            <v-btn class="accent" to="/login">
               <v-icon class="white--text pr-2"> login</v-icon>
               Se Connecter
             </v-btn>
@@ -47,6 +47,7 @@
 </template>
 
 <script>
+import router from "../router/index";
 export default {
   name: "NavBar",
   data: () => {
@@ -71,7 +72,7 @@ export default {
     setConnected: function () {
       //Je verifie si il y a des éléments dans le local storage
       //Si il n'y en a pas j'ajoute un objet pour me permettre de dire si il est connecté
-      if (localStorage.getItem("vsb-connected").length == 0) {
+      if (localStorage.getItem("vbs-connected").length == 0) {
         localStorage.setItem(
           "vbs-connected",
           JSON.stringify({ connected: false })
@@ -91,6 +92,9 @@ export default {
         //   position: { x: "right", y: "top" },
         // });
       }
+    },
+    connectBtn() {
+      router.replace("/login");
     },
   },
 };
