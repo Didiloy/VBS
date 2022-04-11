@@ -1,10 +1,7 @@
 <template>
   <v-navigation-drawer app class="secondary" clipped permanent>
     <v-list nav dense>
-      <v-list-item-group
-        v-model="group"
-        active-class="accent--text text--accent-4"
-      >
+      <v-list-item-group active-class="accent--text text--accent-4">
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
           <v-list-item-title>
             <v-icon class="grey--text">{{ items.icon }}</v-icon>
