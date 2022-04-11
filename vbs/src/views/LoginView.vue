@@ -27,7 +27,7 @@
         </v-btn>
       </v-col>
       <v-col>
-        <h2 class="grey--text text-h3 text-center">S'inscrire</h2>
+        <h2 class="grey--text text-h3 text-center">Créer un compte</h2>
 
         <v-text-field
           solo
