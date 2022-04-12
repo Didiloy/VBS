@@ -13,6 +13,9 @@
     "dependencies": {
         "@prisma/client": "^3.12.0",
         "core-js": "^3.8.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
+        "notyf": "^3.10.0",
         "prisma": "^3.12.0",
         "vue": "^2.6.14",
         "vue-router": "^3.5.1",
