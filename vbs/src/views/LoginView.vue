@@ -14,12 +14,14 @@
           label="Username"
           clearable
           class="pt-10"
+          v-model="tfConnect"
         ></v-text-field>
         <v-text-field
           solo
           label="Mot de passe"
           clearable
           type="password"
+          v-model="tfPwConnect"
         ></v-text-field>
         <v-btn class="accent" block elevation="2">
           <v-icon class="white--text pr-2"> login</v-icon>
@@ -34,12 +36,14 @@
           label="Username"
           clearable
           class="pt-10"
+          v-model="tfCreate"
         ></v-text-field>
         <v-text-field
           solo
           label="Mot de passe"
           clearable
           type="password"
+          v-model="tfPwCreate"
         ></v-text-field>
         <v-btn class="accent" block elevation="2">
           <v-icon class="white--text pr-2"> login</v-icon>
@@ -51,8 +55,21 @@
 </template>
 
 <script>
+import { addUser, login } from "@/dao/databaseDao.js";
 export default {
   name: "LoginView",
+  data() {
+    return {
+      tfConnect: "",
+      tfCreate: "",
+      tfPwConnect: "",
+      tfPwCreate: "",
+    };
+  },
   components: {},
+  methods: {
+    login() {},
+    createUser() {},
+  },
 };
 </script>

@@ -18,6 +18,11 @@
           </v-avatar>
           <div class="d-flex justify-space-around">
             <div class="mt-4">
+              <p class="grey--text font-italic">{{ username }}</p>
+            </div>
+          </div>
+          <div class="d-flex justify-space-around">
+            <div class="mt-4">
               <p class="grey--text">Dark mode</p>
             </div>
             <div>
@@ -49,6 +54,7 @@ export default {
   name: "NavBar",
   data: () => {
     return {
+      username: "",
       items: [
         { title: "Recherche", icon: "mdi-magnify", path: "/about" },
         { title: "Recommendations", icon: "article", path: null },
