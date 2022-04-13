@@ -73,15 +73,23 @@ export default {
   },
   components: {},
   methods: {
+    setConnected: function (name) {
+      localStorage.setItem(
+        "vbs-connected",
+        JSON.stringify({ connected: true, name: name })
+      );
+    },
     login() {
       try {
         fetch(
           `http://localhost:4000/login/${this.tfConnect}/${this.tfPwConnect}`
         ).then((response) => {
           if (response.status == 200) {
-            console.log(response);
             response.json().then((data) => {
               if (data.length > 0) {
+                this.setConnected(data[0].name);
+                this.$store.state.connected = true;
+                this.$emit("updateKey");
                 notyf.success({
                   message: "Vous êtes connecté !",
                   duration: 3000,

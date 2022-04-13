@@ -1,7 +1,7 @@
 <template>
-  <v-navigation-drawer app class="secondary" clipped permanent>
+  <v-navigation-drawer app class="primary" clipped permanent>
     <v-list nav dense>
-      <v-list-item-group active-class="accent--text text--accent-4">
+      <v-list-item-group active-class="accent--text text--accent">
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
           <v-list-item-title>
             <v-icon class="grey--text">{{ items.icon }}</v-icon>
@@ -12,7 +12,7 @@
     </v-list>
     <template v-slot:append>
       <div class="pa-2">
-        <v-card align="center" class="pa-3 secondary">
+        <v-card align="center" class="pa-3 primary">
           <v-avatar size="40">
             <v-icon class="grey--text" x-large> account_circle </v-icon>
           </v-avatar>
@@ -26,7 +26,7 @@
               <p class="grey--text">Dark mode</p>
             </div>
             <div>
-              <v-switch inset class="" @click="darkMode()"></v-switch>
+              <v-switch inset color="secondary" @click="darkMode()"></v-switch>
             </div>
           </div>
 
@@ -56,21 +56,21 @@ export default {
     return {
       username: "",
       items: [
-        { title: "Recherche", icon: "mdi-magnify", path: "/about" },
+        { title: "Acceuil", icon: "home", path: "/about" },
         { title: "Recommendations", icon: "article", path: null },
         { title: "Bibliothèque", icon: "favorite", path: null },
       ],
-      connected: false,
     };
   },
   computed: {
     computedConnected() {
-      return this.connected;
+      return this.$store.state.connected;
     },
   },
   methods: {
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      console.log(this.$store.state.connected);
     },
     setConnected: function () {
       //Je verifie si il y a des éléments dans le local storage
@@ -86,14 +86,9 @@ export default {
         this.connected = JSON.parse(localStorageConnected);
       } catch (error) {
         console.log(
-          "impossible de récupérer l'objet dans le local storage\nerror:",
+          "impossible de récupérer l'objet dans le local storage:",
           error
         );
-        // notyf.error({
-        //   message: "Un problème est survenu !",
-        //   duration: 3000,
-        //   position: { x: "right", y: "top" },
-        // });
       }
     },
     connectBtn() {
