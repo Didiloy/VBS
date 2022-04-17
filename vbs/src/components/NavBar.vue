@@ -1,6 +1,8 @@
 <template>
   <v-app-bar class="secondary" flat dense app clipped-left>
-    <v-toolbar-title class="text-uppercase grey--text">vbs</v-toolbar-title>
+    <v-toolbar-title class="text-uppercase grey--text" @click="goHome"
+      >vbs</v-toolbar-title
+    >
 
     <v-spacer></v-spacer>
     <v-text-field
@@ -14,6 +16,7 @@
       clear-icon
       class="shrink mx-4"
       v-model="textfield"
+      v-on:keyup.enter="search"
     ></v-text-field>
 
     <v-btn icon class="accent" height="40px" @click="search">
@@ -25,7 +28,8 @@
 </template>
 
 <script>
-import { globalSearch } from "@/api/api.js";
+// import { globalSearch } from "@/api/api.js";
+import router from "../router/index";
 export default {
   name: "NavBar",
   data: () => {
@@ -34,11 +38,19 @@ export default {
     };
   },
   methods: {
-    async search() {
-      await globalSearch(this.textfield).then((response) => {
-        console.log(response);
-      });
+    search() {
+      // await globalSearch(this.textfield).then((response) => {
+      //   console.log(response);
+      // });
+      // this.textfield = "";
+      router.replace(`/search/${this.textfield}`);
       this.textfield = "";
+    },
+    /**
+     * Méthode permettant de retourner a la vue HomeView
+     */
+    goHome() {
+      router.replace(`/`);
     },
   },
   mounted() {},
