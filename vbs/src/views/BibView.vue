@@ -1,5 +1,5 @@
 <template>
-  <div v-if="books">
+  <div v-if="books.length > 0">
     <GridOfCard :books="books" />
   </div>
   <div v-else>
@@ -27,13 +27,8 @@ export default {
   },
   methods: {
     async getBooks() {
-      this.books = localStorage.getItem("vbs-bibliotheque");
-    },
-  },
-  watch: {
-    //refresh components a chaque changement de name
-    query: function () {
-      this.search();
+      let books = localStorage.getItem("vbs-bibliotheque");
+      this.books = JSON.parse(books);
     },
   },
 };

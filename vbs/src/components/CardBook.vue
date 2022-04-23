@@ -23,7 +23,7 @@
     </v-card-text>
 
     <v-card-actions class="pl-16">
-      <v-btn color="accent" text>
+      <v-btn color="accent" text @click="addToBib">
         <v-icon class="accent--text">favorite</v-icon>
         Ajouter</v-btn
       >
@@ -39,6 +39,10 @@
 export default {
   name: "CardBook",
   props: {
+    id: {
+      required: true,
+      type: String,
+    },
     title: {
       required: true,
       type: String,
@@ -58,6 +62,32 @@ export default {
     categories: {
       required: false,
       type: Array,
+    },
+  },
+  methods: {
+    addToBib() {
+      let books = localStorage.getItem("vbs-bibliotheque");
+      if (!books) {
+        books = {};
+      } else {
+        books = JSON.parse(books);
+      }
+      let bookToAdd = {
+        id: this.id,
+        title: this.title,
+        author: this.author,
+        description: this.description,
+        imageLinks: {
+          thumbnail: this.image,
+        },
+        categories: this.categories,
+      };
+      console.log(books);
+      books[this.id] = {
+        volumeInfo: bookToAdd,
+      };
+      // books = Object.assign(books, bookToAdd);
+      localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
     },
   },
 };

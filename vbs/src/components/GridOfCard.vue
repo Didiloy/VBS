@@ -5,6 +5,7 @@
     <CardBook
       v-for="book in books"
       :key="book.id"
+      :id="book.id"
       :title="book.volumeInfo.title"
       :author="
         book.volumeInfo.authors
