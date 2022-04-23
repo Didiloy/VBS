@@ -1,5 +1,5 @@
 <template>
-  <div v-if="books.length > 0">
+  <div v-if="Object.keys(books).length > 0">
     <GridOfCard :books="books" />
   </div>
   <div v-else>
@@ -29,6 +29,7 @@ export default {
     async getBooks() {
       let books = localStorage.getItem("vbs-bibliotheque");
       this.books = JSON.parse(books);
+      console.log(this.books);
     },
   },
 };
