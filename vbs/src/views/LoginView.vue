@@ -58,7 +58,6 @@ export default {
         JSON.stringify({ connected: true, name: name })
       );
     },
-    async createUser() {},
   },
 };
 </script>

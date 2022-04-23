@@ -58,7 +58,7 @@ export default {
       items: [
         { title: "Acceuil", icon: "home", path: "/about" },
         { title: "Recommendations", icon: "article", path: null },
-        { title: "Bibliothèque", icon: "favorite", path: null },
+        { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
       ],
     };
   },

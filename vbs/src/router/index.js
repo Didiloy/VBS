@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import SearchView from "../views/SearchView.vue";
+import BibView from "../views/BibView.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,12 @@ const routes = [{
         path: "/search/:query",
         name: "searchview",
         component: SearchView,
+        props: true,
+    },
+    {
+        path: "/bibliotheque",
+        name: "bibview",
+        component: BibView,
         props: true,
     },
     {
