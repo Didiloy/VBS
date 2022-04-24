@@ -5,6 +5,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import SearchView from "../views/SearchView.vue";
 import BibView from "../views/BibView.vue";
+import InformationView from "../views/InformationView.vue";
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,18 @@ const routes = [{
         path: "/bibliotheque",
         name: "bibview",
         component: BibView,
+        props: true,
+    },
+    {
+        path: "/information/:id",
+        name: "informationview",
+        component: InformationView,
+        props: true,
+    },
+    {
+        path: "/information",
+        name: "informationview",
+        component: InformationView,
         props: true,
     },
     {

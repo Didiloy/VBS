@@ -32,7 +32,7 @@
         Ajouter</v-btn
       >
 
-      <v-btn color="accent" text>
+      <v-btn color="accent" text @click="Information">
         <v-icon class="accent--text">add</v-icon>
         informations
       </v-btn>
@@ -129,6 +129,9 @@ export default {
         notyf.error("Un problème est survenu.");
         console.log(error);
       }
+    },
+    Information() {
+      router.replace("/information/" + this.id);
     },
   },
 };
