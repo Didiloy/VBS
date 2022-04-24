@@ -23,7 +23,11 @@
     </v-card-text>
 
     <v-card-actions class="pl-16">
-      <v-btn color="accent" text @click="addToBib">
+      <v-btn v-if="inBib" color="accent" text @click="DelFromBib">
+        <v-icon class="accent--text">delete</v-icon>
+        Supprimer</v-btn
+      >
+      <v-btn v-else color="accent" text @click="AddToBib">
         <v-icon class="accent--text">favorite</v-icon>
         Ajouter</v-btn
       >
@@ -36,6 +40,15 @@
   </v-card>
 </template>
 <script>
+import { Notyf } from "notyf";
+import router from "../router/index.js";
+const notyf = new Notyf({
+  duration: 2000,
+  position: {
+    x: "right",
+    y: "top",
+  },
+});
 export default {
   name: "CardBook",
   props: {
@@ -63,9 +76,13 @@ export default {
       required: false,
       type: Array,
     },
+    inBib: {
+      required: false,
+      type: Boolean,
+    },
   },
   methods: {
-    addToBib() {
+    AddToBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       if (!books) {
         books = {};
@@ -82,12 +99,36 @@ export default {
         },
         categories: this.categories,
       };
-      console.log(books);
-      books[this.id] = {
-        volumeInfo: bookToAdd,
-      };
-      // books = Object.assign(books, bookToAdd);
-      localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+      console.log(books, this.id);
+      try {
+        books[this.id] = {
+          volumeInfo: bookToAdd,
+        };
+        // books = Object.assign(books, bookToAdd);
+        localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+        notyf.success("Livre enregistré !");
+      } catch (error) {
+        notyf.error("Un problème est survenu.");
+        console.log(error);
+      }
+    },
+    DelFromBib() {
+      let books = localStorage.getItem("vbs-bibliotheque");
+      if (!books) {
+        books = {};
+      } else {
+        books = JSON.parse(books);
+      }
+      try {
+        console.log(books, this.id);
+        delete books[this.id];
+        localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+        notyf.success("Livre supprimé !");
+        router.go();
+      } catch (error) {
+        notyf.error("Un problème est survenu.");
+        console.log(error);
+      }
     },
   },
 };

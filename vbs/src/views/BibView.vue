@@ -1,6 +1,6 @@
 <template>
   <div v-if="Object.keys(books).length > 0">
-    <GridOfCard :books="books" />
+    <GridOfCard :books="books" :inBib="true" />
   </div>
   <div v-else>
     <v-container class="d-flex flex-column justify-center align-center">

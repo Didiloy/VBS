@@ -5,7 +5,8 @@
     <CardBook
       v-for="book in books"
       :key="book.id"
-      :id="book.id"
+      :inBib="inBib"
+      :id="book.id || book.volumeInfo.id"
       :title="book.volumeInfo.title"
       :author="
         book.volumeInfo.authors
@@ -45,6 +46,10 @@ export default {
     books: {
       required: true,
       type: Array,
+    },
+    inBib: {
+      required: false,
+      type: Boolean,
     },
   },
   data: () => {
