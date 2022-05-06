@@ -56,8 +56,8 @@ export default {
     return {
       username: "",
       items: [
-        { title: "Acceuil", icon: "home", path: "/about" },
-        { title: "Recommendations", icon: "article", path: null },
+        { title: "Acceuil", icon: "home", path: "/" },
+        { title: "Recommendations", icon: "article", path: "/about" },
         { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
       ],
     };
