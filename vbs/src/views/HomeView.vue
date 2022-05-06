@@ -68,7 +68,7 @@
           </v-card-text>
 
           <v-card-actions class="pl-16">
-            <v-btn color="accent" text @click="AddToBib">
+            <v-btn color="accent" text>
               <v-icon class="accent--text">favorite</v-icon>
               Ajouter</v-btn
             >
@@ -89,7 +89,7 @@
           </v-card-text>
 
           <v-card-actions class="pl-16">
-            <v-btn color="accent" text @click="AddToBib">
+            <v-btn color="accent" text>
               <v-icon class="accent--text">favorite</v-icon>
               Ajouter</v-btn
             >
