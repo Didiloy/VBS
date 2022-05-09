@@ -105,7 +105,7 @@
             Envi de se creuser la tête</v-card-subtitle
           >
           <v-card-actions class="">
-            <v-btn color="accent" text @click="search('mystery')">
+            <v-btn color="accent" text @click="search('thriller')">
               <v-icon class="accent--text">question_mark</v-icon>
               Je veux du mystère !</v-btn
             >
