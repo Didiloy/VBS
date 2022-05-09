@@ -31,9 +31,9 @@
             </v-card-text>
 
             <v-card-actions class="pl-16">
-              <v-btn color="accent" text @click="AddToBib">
+              <v-btn color="accent" text @click="search('inspirational')">
                 <v-icon class="accent--text">favorite</v-icon>
-                Ajouter</v-btn
+                Voir les best-sellers !</v-btn
               >
             </v-card-actions>
           </div>
@@ -55,17 +55,15 @@
             src="@/assets/livre_cafe_fenetre.jpg"
           >
           </v-img>
-          <v-card-title>Categorie</v-card-title>
-          <v-card-subtitle class="pb-0"> {{ author }}</v-card-subtitle>
+          <v-card-title>Fiction</v-card-title>
+          <v-card-subtitle class="pb-0">
+            Envi de s'évader dans un autre monde ?</v-card-subtitle
+          >
 
-          <v-card-text class="text--primary">
-            <div>{{ description }}</div>
-          </v-card-text>
-
-          <v-card-actions class="pl-16">
-            <v-btn color="accent" text @click="AddToBib">
-              <v-icon class="accent--text">favorite</v-icon>
-              Ajouter</v-btn
+          <v-card-actions class="">
+            <v-btn color="accent" text @click="search('fantasy')">
+              <v-icon class="accent--text">rocket_launch</v-icon>
+              Voir les livres de fiction !</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -80,17 +78,14 @@
             src="@/assets/livre_fenetre_clair.jpg"
           >
           </v-img>
-          <v-card-title> Categorie</v-card-title>
-          <v-card-subtitle class="pb-0"> {{ author }}</v-card-subtitle>
-
-          <v-card-text class="text--primary">
-            <div>{{ description }}</div>
-          </v-card-text>
-
-          <v-card-actions class="pl-16">
-            <v-btn color="accent" text>
+          <v-card-title> Romance</v-card-title>
+          <v-card-subtitle class="pb-0">
+            Envi de voyager au pays de l'amour ?</v-card-subtitle
+          >
+          <v-card-actions class="">
+            <v-btn color="accent" text @click="search('romance')">
               <v-icon class="accent--text">favorite</v-icon>
-              Ajouter</v-btn
+              Voir les livres de romance !</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -105,17 +100,14 @@
             src="@/assets/bookshelf.jpg"
           >
           </v-img>
-          <v-card-title>Categorie</v-card-title>
-          <v-card-subtitle class="pb-0"> {{ author }}</v-card-subtitle>
-
-          <v-card-text class="text--primary">
-            <div>{{ description }}</div>
-          </v-card-text>
-
-          <v-card-actions class="pl-16">
-            <v-btn color="accent" text>
-              <v-icon class="accent--text">favorite</v-icon>
-              Ajouter</v-btn
+          <v-card-title>Mystère</v-card-title>
+          <v-card-subtitle class="pb-0">
+            Envi de se creuser la tête</v-card-subtitle
+          >
+          <v-card-actions class="">
+            <v-btn color="accent" text @click="search('mystery')">
+              <v-icon class="accent--text">question_mark</v-icon>
+              Je veux du mystère !</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -125,8 +117,16 @@
 </template>
 
 <script>
+// https://www.googleapis.com/books/v1/volumes?q=subject:inspirational les bestsellers
+import router from "../router/index";
 export default {
   name: "HomeView",
   components: {},
+  methods: {
+    search(categorie) {
+      // await this.search("subject:inspirational").then();
+      router.replace(`/search/subject:${categorie}`);
+    },
+  },
 };
 </script>
