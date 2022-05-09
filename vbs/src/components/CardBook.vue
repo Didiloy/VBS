@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto secondary" elevation="6" max-width="380">
+  <v-card class="mx-auto secondary rounded-xl" elevation="6" max-width="380">
     <v-img
       class="white--text align-end"
       height="200px"
