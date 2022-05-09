@@ -12,7 +12,7 @@ export async function globalSearch(query) {
                 query +
                 "&" +
                 maxResults +
-                "30&" +
+                "50&" +
                 orderBy +
                 "relevance&" +
                 printType +
