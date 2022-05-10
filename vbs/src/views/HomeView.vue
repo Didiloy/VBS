@@ -26,8 +26,16 @@
             <v-card-subtitle class="pb-0"> {{ author }}</v-card-subtitle>
 
             <v-card-text class="text--primary">
-              <v-card-title> Lorem </v-card-title>
-              <div>test</div>
+              <v-card-title> Bienvenue ! </v-card-title>
+              <div>
+                Bienvenue sur <b>VBS</b>, cherchez et ajoutez des livres dans
+                votre bibliothèque pour profiter des recommendations
+                personnalisées par rapport à votre lecture ! <br />
+                Découvrez de nouveaux auteurs ou de nouvelles sagas grâce aux
+                recherche par auteur, titre ou genre ! <br />
+                Pour commencer je vous conseil de jeter un oeil aux best sellers
+                ;)
+              </div>
             </v-card-text>
 
             <v-card-actions class="pl-16">
@@ -57,7 +65,7 @@
           </v-img>
           <v-card-title>Fiction</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envi de s'évader dans un autre monde ?</v-card-subtitle
+            Envie de s'évader dans un autre monde ?</v-card-subtitle
           >
 
           <v-card-actions class="">
@@ -80,7 +88,7 @@
           </v-img>
           <v-card-title> Romance</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envi de voyager au pays de l'amour ?</v-card-subtitle
+            Envie de voyager au pays de l'amour ?</v-card-subtitle
           >
           <v-card-actions class="">
             <v-btn color="accent" text @click="search('romance')">
