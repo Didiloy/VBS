@@ -124,6 +124,7 @@ export default {
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
         notyf.success("Livre supprimé !");
+        await new Promise((r) => setTimeout(r, 2500));
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
