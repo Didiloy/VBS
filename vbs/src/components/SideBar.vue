@@ -57,7 +57,7 @@ export default {
       username: "",
       items: [
         { title: "Acceuil", icon: "home", path: "/" },
-        { title: "Recommendations", icon: "article", path: "/about" },
+        { title: "Recommendations", icon: "article", path: "/recommandation" },
         { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
       ],
     };
