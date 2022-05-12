@@ -4,7 +4,7 @@
   </div>
   <div v-else>
     <v-container class="d-flex flex-column justify-center align-center">
-      <v-icon class="grey--text pt-16" x-large>
+      <v-icon class="grey--text pt-16 ic" x-large>
         sentiment_very_dissatisfied
       </v-icon>
       <h1 class="grey--text Heading 1 pt-16">Vous n'avez aucun livre !</h1>
@@ -13,10 +13,10 @@
   </div>
 </template>
 <script>
-import GridOfCard from "../components/GridOfCard";
+// import GridOfCard from "../components/GridOfCard";
 export default {
   name: "RecommandationView",
-  components: { GridOfCard },
+  components: {},
   data: () => {
     return {
       books: {},
@@ -35,7 +35,7 @@ export default {
 };
 </script>
 <style scoped>
-.v-icon {
+.ic {
   font-size: 200px !important;
 }
 </style>
