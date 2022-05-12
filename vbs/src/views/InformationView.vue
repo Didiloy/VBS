@@ -138,7 +138,7 @@ export default {
         console.log(error);
       }
     },
-    AddToBib() {
+    async AddToBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       if (!books) {
         books = {};
