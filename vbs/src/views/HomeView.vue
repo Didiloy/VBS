@@ -32,13 +32,13 @@
                 votre bibliothèque pour profiter des recommendations
                 personnalisées par rapport à votre lecture ! <br />
                 Découvrez de nouveaux auteurs ou de nouvelles sagas grâce aux
-                recherche par auteur, titre ou genre ! <br />
+                recherches par auteur, titre ou genre ! <br />
                 Pour commencer je vous conseil de jeter un oeil aux best sellers
                 ;)
               </div>
             </v-card-text>
 
-            <v-card-actions class="pl-16">
+            <v-card-actions class="pl-16 justify-end">
               <v-btn color="accent" text @click="search('inspirational')">
                 <v-icon class="accent--text">favorite</v-icon>
                 Voir les best-sellers !</v-btn
@@ -68,7 +68,7 @@
             Envie de s'évader dans un autre monde ?</v-card-subtitle
           >
 
-          <v-card-actions class="">
+          <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('fantasy')">
               <v-icon class="accent--text">rocket_launch</v-icon>
               Voir les livres de fiction !</v-btn
@@ -90,7 +90,7 @@
           <v-card-subtitle class="pb-0">
             Envie de voyager au pays de l'amour ?</v-card-subtitle
           >
-          <v-card-actions class="">
+          <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('romance')">
               <v-icon class="accent--text">favorite</v-icon>
               Voir les livres de romance !</v-btn
@@ -112,7 +112,7 @@
           <v-card-subtitle class="pb-0">
             Envi de se creuser la tête</v-card-subtitle
           >
-          <v-card-actions class="">
+          <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('thriller')">
               <v-icon class="accent--text">question_mark</v-icon>
               Je veux du mystère !</v-btn
