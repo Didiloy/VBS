@@ -119,7 +119,7 @@ export default {
         this.inBib = false;
       }
     },
-    DelFromBib() {
+    async DelFromBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       if (!books) {
         books = {};
@@ -131,6 +131,7 @@ export default {
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
         notyf.success("Livre supprimé !");
+        await new Promise((r) => setTimeout(r, 2500));
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
@@ -163,6 +164,7 @@ export default {
         // books = Object.assign(books, bookToAdd);
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
         notyf.success("Livre enregistré !");
+        await new Promise((r) => setTimeout(r, 2500));
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
