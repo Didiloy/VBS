@@ -112,7 +112,7 @@ export default {
         console.log(error);
       }
     },
-    DelFromBib() {
+    async DelFromBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       if (!books) {
         books = {};

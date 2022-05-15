@@ -16,6 +16,7 @@
           <div>
             <v-img
               width="350px !important"
+              height="100%"
               max-width="350px"
               class="rounded-l-xl"
               src="@/assets/livres_empiles.jpg"
@@ -23,8 +24,6 @@
             </v-img>
           </div>
           <div class="" width="75% !important">
-            <v-card-subtitle class="pb-0"> {{ author }}</v-card-subtitle>
-
             <v-card-text class="text--primary">
               <v-card-title> Bienvenue ! </v-card-title>
               <div>
@@ -110,7 +109,7 @@
           </v-img>
           <v-card-title>Mystère</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envi de se creuser la tête</v-card-subtitle
+            Envi de se creuser la tête ?</v-card-subtitle
           >
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('thriller')">
