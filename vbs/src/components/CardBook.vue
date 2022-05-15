@@ -19,7 +19,7 @@
         </v-chip-group>
       </div>
 
-      <div>{{ description }}</div>
+      <div v-html="description"></div>
     </v-card-text>
 
     <v-card-actions class="pl-16">
