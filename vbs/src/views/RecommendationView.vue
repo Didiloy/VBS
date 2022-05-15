@@ -96,9 +96,9 @@
 </template>
 <script>
 import router from "../router/index.js";
-
 import { globalSearch } from "@/api/api.js";
 
+//TODO verifier que j'ai pas lu les livres qui sont dans recommendations
 export default {
   name: "RecommandationView",
   data: () => {
