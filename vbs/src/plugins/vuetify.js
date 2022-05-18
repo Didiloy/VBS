@@ -7,29 +7,31 @@ import "material-design-icons-iconfont/dist/material-design-icons.css";
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    icons: {
-        iconfont: "md" || "fa",
+  icons: {
+    iconfont: "md" || "fa",
+  },
+  theme: {
+    options: {
+      customProperties: true,
     },
-    theme: {
-        options: {
-            customProperties: true,
-        },
-        dark: false,
-        themes: {
-            light: {
-                primary: "#D5D5D5",
-                secondary: "#FFFFFF",
-                accent: "#DF3578",
-                error: "#b71c1c",
-                anchor: "#DF3578",
-            },
-            dark: {
-                primary: "#292643",
-                secondary: "#44426E",
-                accent: "#DF3578",
-                error: "#b71c1c",
-                anchor: "#DF3578",
-            },
-        },
+    dark: false,
+    themes: {
+      light: {
+        primary: "#D5D5D5",
+        secondary: "#FFFFFF",
+        accent: "#DF3578",
+        error: "#b71c1c",
+        anchor: "#DF3578",
+      },
+      dark: {
+        // primary: "#292643", //premiere
+        primary: "#292d34", //deuxieme
+        // secondary: "#44426E", //premiere
+        secondary: "#21242a", //deuxieme
+        accent: "#DF3578",
+        error: "#b71c1c",
+        anchor: "#DF3578",
+      },
     },
+  },
 });
