@@ -20,7 +20,7 @@
           ? book.volumeInfo.description.length > 100
             ? book.volumeInfo.description.slice(0, 100)
             : book.volumeInfo.description
-          : ''
+          : 'Pas de description pour ce livre.'
       "
       :image="
         book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : null
