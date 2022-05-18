@@ -65,6 +65,16 @@
             <v-icon class="white--text">favorite</v-icon>
             Ajouter</v-btn
           >
+          <v-btn v-if="inSouhaits" class="accent" text @click="DelFromSouhaits">
+            <v-icon class="white--text">favorite</v-icon
+            ><!--Change icon -->
+            Retirer des souhait</v-btn
+          >
+          <v-btn v-else class="accent" text @click="AddToSouhaits">
+            <v-icon class="white--text">favorite</v-icon
+            ><!--Change icon -->
+            Liste de souhait</v-btn
+          >
         </v-row>
       </v-col>
     </v-row>
@@ -94,6 +104,7 @@ export default {
     return {
       book: {},
       inBib: false,
+      inSouhaits: false,
     };
   },
   mounted() {
@@ -119,6 +130,17 @@ export default {
         this.inBib = false;
       }
     },
+    InSouhaits() {
+      let books = localStorage.getItem("vbs-souhaits");
+      books = JSON.parse(books);
+      if (books[this.book.id]) {
+        console.log("true ");
+        this.inSouhaits = true;
+      } else {
+        console.log("false " + books[this.book.id]);
+        this.inSouhaits = false;
+      }
+    },
     async DelFromBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       if (!books) {
@@ -130,6 +152,25 @@ export default {
         console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+        notyf.success("Livre supprimé !");
+        await new Promise((r) => setTimeout(r, 2500));
+        router.go();
+      } catch (error) {
+        notyf.error("Un problème est survenu.");
+        console.log(error);
+      }
+    },
+    async DelFromSouhaits() {
+      let books = localStorage.getItem("vbs-souhaits");
+      if (!books) {
+        books = {};
+      } else {
+        books = JSON.parse(books);
+      }
+      try {
+        console.log(books, this.id);
+        delete books[this.id];
+        localStorage.setItem("vbs-souhaits", JSON.stringify(books));
         notyf.success("Livre supprimé !");
         await new Promise((r) => setTimeout(r, 2500));
         router.go();
@@ -163,6 +204,39 @@ export default {
         };
         // books = Object.assign(books, bookToAdd);
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+        notyf.success("Livre enregistré !");
+        await new Promise((r) => setTimeout(r, 2500));
+        router.go();
+      } catch (error) {
+        notyf.error("Un problème est survenu.");
+        console.log(error);
+      }
+    },
+    async AddToSouhaits() {
+      let books = localStorage.getItem("vbs-souhaits");
+      if (!books) {
+        books = {};
+      } else {
+        books = JSON.parse(books);
+      }
+
+      let bookToAdd = {
+        id: this.book.id,
+        title: this.book.volumeInfo.title,
+        author: this.book.volumeInfo.authors,
+        description: this.book.volumeInfo.description,
+        imageLinks: {
+          thumbnail: this.book.volumeInfo.imageLinks.thumbnail,
+        },
+        categories: this.book.volumeInfo.categories,
+      };
+      console.log(books, this.id);
+      try {
+        books[this.id] = {
+          volumeInfo: bookToAdd,
+        };
+        // books = Object.assign(books, bookToAdd);
+        localStorage.setItem("vbs-souhaits", JSON.stringify(books));
         notyf.success("Livre enregistré !");
         await new Promise((r) => setTimeout(r, 2500));
         router.go();

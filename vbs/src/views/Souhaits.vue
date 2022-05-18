@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     async getBooks() {
-      let books = localStorage.getItem("vbs-bibliotheque");
+      let books = localStorage.getItem("vbs-souhaits");
       this.books = JSON.parse(books);
       console.log(this.books);
     },

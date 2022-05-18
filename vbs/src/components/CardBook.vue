@@ -22,7 +22,7 @@
       <div v-html="description"></div>
     </v-card-text>
 
-    <v-card-actions class="pl-16">
+    <v-card-actions class="justify-end">
       <v-btn v-if="inBib" color="accent" text @click="DelFromBib">
         <v-icon class="accent--text">delete</v-icon>
         Supprimer</v-btn
