@@ -59,6 +59,7 @@ export default {
         { title: "Acceuil", icon: "home", path: "/" },
         { title: "Recommendations", icon: "article", path: "/recommandation" },
         { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
+        { title: "Liste de souhaits", icon: "favorite", path: "/souhaits" }, //remplacer l'icone
       ],
     };
   },

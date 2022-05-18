@@ -7,6 +7,7 @@ import SearchView from "../views/SearchView.vue";
 import BibView from "../views/BibView.vue";
 import InformationView from "../views/InformationView.vue";
 import RecommendationView from "../views/RecommendationView.vue";
+import SouhaitsView from "../views/SouhaitsView.vue";
 
 Vue.use(VueRouter);
 
@@ -49,6 +50,12 @@ const routes = [
     path: "/recommandation",
     name: "RecommandationView",
     component: RecommendationView,
+    props: true,
+  },
+  {
+    path: "/souhaits",
+    name: "SouhaitsView",
+    component: SouhaitsView,
     props: true,
   },
   {
