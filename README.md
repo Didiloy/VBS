@@ -4,4 +4,5 @@ Vue Book Suggestions
 
 # TODO
 
-- login
+- multiple themes
+- liste de souhaits
