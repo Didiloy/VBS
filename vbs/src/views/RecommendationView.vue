@@ -114,16 +114,26 @@ export default {
   async mounted() {
     await this.getBooks().then(async () => {
       //Avoir un auteur aléatoire parmis tout les auteurs
+      while (
+        this.choosenAuthor === null ||
+        this.choosenAuthor === "" ||
+        this.choosenCategory === null ||
+        this.choosencategory === "" ||
+        this
+      ) {
+        //choisir un aléatoire et s'assurer qu'on tire pas une string vide
+        let author =
+          this.books[keys[(keys.length * Math.random()) << 0]].volumeInfo
+            .author;
+        let genre =
+          this.books[keys[(keys.length * Math.random()) << 0]].volumeInfo
+            .categories[0];
+        this.choosenAuthor = author;
+        this.choosenCategory = genre;
+      }
       let keys = Object.keys(this.books);
-      let author =
-        this.books[keys[(keys.length * Math.random()) << 0]].volumeInfo.author;
-      let genre =
-        this.books[keys[(keys.length * Math.random()) << 0]].volumeInfo
-          .categories[0];
-      this.choosenAuthor = author;
-      this.choosenCategory = genre;
-      await this.getBooksByauthor(author);
-      await this.getBooksByGenre(genre);
+      await this.getBooksByauthor(this.choosenAuthor);
+      await this.getBooksByGenre(this.choosenCategory);
     });
   },
   methods: {
@@ -165,17 +175,11 @@ export default {
 .ic {
   font-size: 200px !important;
 }
-.wrapper::-webkit-scrollbar-track {
-  color: var(--v-primary-base);
-}
-.wrapper::-webkit-scrollbar-thumb {
-  color: var(--v-secondary-base);
-}
 
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 /* Track */
