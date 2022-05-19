@@ -66,12 +66,12 @@
             Ajouter</v-btn
           >
           <v-btn v-if="inSouhaits" class="accent" text @click="DelFromSouhaits">
-            <v-icon class="white--text">favorite</v-icon
+            <v-icon class="white--text">delete</v-icon
             ><!--Change icon -->
             Retirer des souhait</v-btn
           >
           <v-btn v-else class="accent" text @click="AddToSouhaits">
-            <v-icon class="white--text">favorite</v-icon
+            <v-icon class="white--text">playlist_add</v-icon
             ><!--Change icon -->
             Liste de souhait</v-btn
           >
@@ -117,13 +117,14 @@ export default {
         this.book = response;
         console.log(this.book);
         this.InBib();
+        this.InSouhaits();
       });
     },
     InBib() {
       let books = localStorage.getItem("vbs-bibliotheque");
       books = JSON.parse(books);
       if (books[this.book.id]) {
-        console.log("true ");
+        console.log("InBib true ");
         this.inBib = true;
       } else {
         console.log("false " + books[this.book.id]);
@@ -134,10 +135,10 @@ export default {
       let books = localStorage.getItem("vbs-souhaits");
       books = JSON.parse(books);
       if (books[this.book.id]) {
-        console.log("true ");
+        console.log("InSouhait true ");
         this.inSouhaits = true;
       } else {
-        console.log("false " + books[this.book.id]);
+        console.log("InSouhait false " + books[this.book.id]);
         this.inSouhaits = false;
       }
     },
