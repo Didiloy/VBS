@@ -15,7 +15,7 @@
     <v-card-text class="text--primary">
       <div>
         <v-chip-group active-class="accent white--text" column>
-          <v-chip v-for="cat in categories" :key="cat">{{ cat }}</v-chip>
+          <v-chip v-for="(cat, i) in cat" :key="i">{{ cat }}</v-chip>
         </v-chip-group>
       </div>
 
@@ -80,6 +80,18 @@ export default {
       required: false,
       type: Boolean,
     },
+  },
+  data: () => {
+    return {
+      cat: null,
+    };
+  },
+  mounted() {
+    if (this.categories.length < 3) {
+      this.cat = [...this.categories];
+    } else {
+      this.cat = this.categories.slice(0, 3);
+    }
   },
   methods: {
     AddToBib() {
