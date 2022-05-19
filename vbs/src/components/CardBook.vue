@@ -27,6 +27,10 @@
         <v-icon class="accent--text">delete</v-icon>
         Supprimer</v-btn
       >
+      <v-btn v-else-if="inSouhait" color="accent" text @click="DelFromSouhaits">
+        <v-icon class="accent--text">delete</v-icon>
+        Supprimer</v-btn
+      >
       <v-btn v-else color="accent" text @click="AddToBib">
         <v-icon class="accent--text">favorite</v-icon>
         Ajouter</v-btn
@@ -77,6 +81,10 @@ export default {
       type: Array,
     },
     inBib: {
+      required: false,
+      type: Boolean,
+    },
+    inSouhait: {
       required: false,
       type: Boolean,
     },
@@ -135,6 +143,25 @@ export default {
         console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
+        notyf.success("Livre supprimé !");
+        await new Promise((r) => setTimeout(r, 2500));
+        router.go();
+      } catch (error) {
+        notyf.error("Un problème est survenu.");
+        console.log(error);
+      }
+    },
+    async DelFromSouhaits() {
+      let books = localStorage.getItem("vbs-souhaits");
+      if (!books) {
+        books = {};
+      } else {
+        books = JSON.parse(books);
+      }
+      try {
+        console.log(books, this.id);
+        delete books[this.id];
+        localStorage.setItem("vbs-souhaits", JSON.stringify(books));
         notyf.success("Livre supprimé !");
         await new Promise((r) => setTimeout(r, 2500));
         router.go();

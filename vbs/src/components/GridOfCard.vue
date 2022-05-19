@@ -6,6 +6,7 @@
       v-for="book in books"
       :key="book.id"
       :inBib="inBib"
+      :inSouhait="inSouhait"
       :id="book.id || book.volumeInfo.id"
       :title="book.volumeInfo.title"
       :author="
@@ -48,6 +49,10 @@ export default {
       type: Array,
     },
     inBib: {
+      required: false,
+      type: Boolean,
+    },
+    inSouhait: {
       required: false,
       type: Boolean,
     },
