@@ -171,4 +171,27 @@ export default {
 .wrapper::-webkit-scrollbar-thumb {
   color: var(--v-secondary-base);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  margin-top: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--v-primary-base);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--v-secondary-base);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--v-accent-base);
+}
 </style>
