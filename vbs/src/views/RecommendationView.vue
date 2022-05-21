@@ -102,7 +102,7 @@
 </template>
 <script>
 import router from "../router/index.js";
-import { globalSearch } from "@/api/api.js";
+import { globalSearch, subjectsList } from "@/api/api.js";
 
 //TODO verifier que j'ai pas lu les livres qui sont dans recommendations
 export default {
@@ -158,13 +158,30 @@ export default {
       router.replace("/information/" + id);
     },
     async getBooksByGenre(genre) {
-      await globalSearch("subject:" + genre)
-        .then((response) => {
-          this.genreBooks = response.items;
-          // console.log("genreBooks");
-          // console.log(this.genreBooks);
-        })
-        .catch((err) => console.log(err));
+      try {
+        if (subjectsList[genre].length > 0) {
+          let randomWord =
+            subjectsList[genre][
+              Math.floor(Math.random() * subjectsList[genre].length)
+            ];
+          console.log("RANDOM WORD: " + randomWord);
+          await globalSearch(randomWord + '+subject:"' + genre + '"')
+            .then((response) => {
+              this.genreBooks = response.items;
+              // console.log("genreBooks");
+              // console.log(this.genreBooks);
+            })
+            .catch((err) => console.log(err));
+        }
+      } catch (error) {
+        await globalSearch("subject:" + genre)
+          .then((response) => {
+            this.genreBooks = response.items;
+            // console.log("genreBooks");
+            // console.log(this.genreBooks);
+          })
+          .catch((err) => console.log(err));
+      }
     },
   },
   computed: {
