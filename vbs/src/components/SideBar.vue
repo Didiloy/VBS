@@ -29,15 +29,8 @@
               <v-switch inset color="secondary" @click="darkMode()"></v-switch>
             </div>
           </div>
-
-          <div class="" v-if="computedConnected">
+          <div>
             <v-btn class="accent">
-              <v-icon class="white--text pr-2"> logout</v-icon>
-              Se Déconnecter
-            </v-btn>
-          </div>
-          <div v-else>
-            <v-btn class="accent" to="/login">
               <v-icon class="white--text pr-2"> login</v-icon>
               Se Connecter
             </v-btn>
@@ -63,34 +56,10 @@ export default {
       ],
     };
   },
-  computed: {
-    computedConnected() {
-      return this.$store.state.connected;
-    },
-  },
+  computed: {},
   methods: {
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      console.log(this.$store.state.connected);
-    },
-    setConnected: function () {
-      //Je verifie si il y a des éléments dans le local storage
-      //Si il n'y en a pas j'ajoute un objet pour me permettre de dire si il est connecté
-      if (localStorage.getItem("vbs-connected").length == 0) {
-        localStorage.setItem(
-          "vbs-connected",
-          JSON.stringify({ connected: false })
-        ); //Je met un objet vide dans le local storage sous la clé fav pour me permettre de récupérer les favoris
-      }
-      try {
-        let localStorageConnected = localStorage.getItem("vbs-connected");
-        this.connected = JSON.parse(localStorageConnected);
-      } catch (error) {
-        console.log(
-          "impossible de récupérer l'objet dans le local storage:",
-          error
-        );
-      }
     },
     connectBtn() {
       router.replace("/login");

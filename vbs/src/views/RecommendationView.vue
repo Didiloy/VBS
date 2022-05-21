@@ -6,7 +6,19 @@
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenAuthor }}</v-chip>
     </v-chip-group>
+    <div v-if="!authorsBooksComputed">
+      <v-container class="d-flex flex-column justify-center align-center">
+        <v-icon class="grey--text pt-16" x-large>
+          sentiment_very_dissatisfied
+        </v-icon>
+        <h1 class="grey--text Heading 1 pt-2">Aucuns livres trouvés !</h1>
+        <h2 class="grey--text pt-2">
+          Rechargez la page pour en avoir d'autres.
+        </h2>
+      </v-container>
+    </div>
     <div
+      v-else
       class="d-flex wrapper"
       style="overflow-x: auto; height: 350px !important"
     >
@@ -50,7 +62,19 @@
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenCategory }}</v-chip>
     </v-chip-group>
+    <div v-if="!genreBooksComputed">
+      <v-container class="d-flex flex-column justify-center align-center">
+        <v-icon class="grey--text pt-16" x-large>
+          sentiment_very_dissatisfied
+        </v-icon>
+        <h1 class="grey--text Heading 1 pt-2">Aucuns livres trouvés !</h1>
+        <h2 class="grey--text pt-2">
+          Rechargez la page pour en avoir d'autres.
+        </h2>
+      </v-container>
+    </div>
     <div
+      v-else
       class="d-flex wrapper"
       style="overflow-x: auto; height: 350px !important"
     >
@@ -164,7 +188,7 @@ export default {
             subjectsList[genre][
               Math.floor(Math.random() * subjectsList[genre].length)
             ];
-          console.log("RANDOM WORD: " + randomWord);
+          // console.log("RANDOM WORD: " + randomWord);
           await globalSearch(randomWord + '+subject:"' + genre + '"')
             .then((response) => {
               this.genreBooks = response.items;
@@ -187,6 +211,9 @@ export default {
   computed: {
     authorsBooksComputed() {
       return this.authorsBooks;
+    },
+    genreBooksComputed() {
+      return this.genreBooks;
     },
   },
 };
