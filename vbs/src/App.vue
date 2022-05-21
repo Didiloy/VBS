@@ -16,10 +16,7 @@
 <template>
   <v-app>
     <NavBar />
-    <SideBar
-      :key="key"
-      v-on:updateKey="updateKey"
-    /><!-- key is for re-render the component -->
+    <SideBar :key="key" /><!-- key is for re-render the component -->
     <v-main class="primary">
       <router-view />
     </v-main>
@@ -41,17 +38,13 @@ export default {
     SideBar,
   },
   mounted() {
-    if (localStorage.getItem("vbs-connected").length == 0) {
-      localStorage.setItem(
-        "vbs-connected",
-        JSON.stringify({ connected: false })
-      );
+    if (localStorage.getItem("vbs-theme").length == 0) {
+      localStorage.setItem("vbs-theme", JSON.stringify({ dark: "false" }));
     }
     try {
-      let localStorageConnected = localStorage.getItem("vbs-connected");
-      let obj = JSON.parse(localStorageConnected);
-      this.$store.state.connected = obj.connected;
-      this.key++;
+      let localStorageTheme = localStorage.getItem("vbs-theme");
+      let obj = JSON.parse(localStorageTheme);
+      this.$vuetify.theme.dark = obj.dark;
     } catch (error) {
       console.log(
         "impossible de récupérer l'objet dans le local storage:",
@@ -59,11 +52,7 @@ export default {
       );
     }
   },
-  methods: {
-    updateKey() {
-      this.key++;
-    },
-  },
+  methods: {},
 };
 </script>
 <style scoped></style>

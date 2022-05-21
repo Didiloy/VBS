@@ -75,7 +75,20 @@ export default {
   methods: {
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      let theme = localStorage.getItem("vbs-theme");
+      if (!theme) {
+        theme = { dark: this.$vuetify.theme.dark };
+      } else {
+        theme = JSON.parse(theme);
+        theme.dark = this.$vuetify.theme.dark;
+      }
+      try {
+        localStorage.setItem("vbs-theme", JSON.stringify(theme));
+      } catch (error) {
+        console.log(error);
+      }
     },
+
     connectBtn() {
       router.replace("/login");
     },

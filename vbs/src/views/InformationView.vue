@@ -131,10 +131,10 @@ export default {
   },
   methods: {
     async search() {
-      console.log(this.id);
+      // console.log(this.id);
       await SearchById(this.id).then((response) => {
         this.book = response;
-        console.log(this.book);
+        // console.log(this.book);
         this.InBib();
         this.InSouhaits();
       });
@@ -143,10 +143,10 @@ export default {
       let books = localStorage.getItem("vbs-bibliotheque");
       books = JSON.parse(books);
       if (books[this.book.id]) {
-        console.log("InBib true ");
+        // console.log("InBib true ");
         this.inBib = true;
       } else {
-        console.log("false " + books[this.book.id]);
+        // console.log("false " + books[this.book.id]);
         this.inBib = false;
       }
     },
@@ -154,10 +154,10 @@ export default {
       let books = localStorage.getItem("vbs-souhaits");
       books = JSON.parse(books);
       if (books[this.book.id]) {
-        console.log("InSouhait true ");
+        // console.log("InSouhait true ");
         this.inSouhaits = true;
       } else {
-        console.log("InSouhait false " + books[this.book.id]);
+        // console.log("InSouhait false " + books[this.book.id]);
         this.inSouhaits = false;
       }
     },
@@ -169,7 +169,7 @@ export default {
         books = JSON.parse(books);
       }
       try {
-        console.log(books, this.id);
+        // console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
         notyf.success("Livre supprimé !");
@@ -177,7 +177,7 @@ export default {
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
-        console.log(error);
+        console.warn(error);
       }
     },
     async DelFromSouhaits() {
@@ -188,7 +188,7 @@ export default {
         books = JSON.parse(books);
       }
       try {
-        console.log(books, this.id);
+        // console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-souhaits", JSON.stringify(books));
         notyf.success("Livre supprimé !");
@@ -196,7 +196,7 @@ export default {
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
-        console.log(error);
+        console.warn(error);
       }
     },
     async AddToBib() {
@@ -219,7 +219,7 @@ export default {
         },
         categories: this.book.volumeInfo.categories,
       };
-      console.log(books, this.id);
+      // console.log(books, this.id);
       try {
         books[this.id] = {
           volumeInfo: bookToAdd,
@@ -231,7 +231,7 @@ export default {
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
-        console.log(error);
+        console.warn(error);
       }
     },
     async AddToSouhaits() {
@@ -254,7 +254,7 @@ export default {
         },
         categories: this.book.volumeInfo.categories,
       };
-      console.log(books, this.id);
+      // console.log(books, this.id);
       try {
         books[this.id] = {
           volumeInfo: bookToAdd,
@@ -266,7 +266,7 @@ export default {
         router.go();
       } catch (error) {
         notyf.error("Un problème est survenu.");
-        console.log(error);
+        console.warn(error);
       }
     },
   },
