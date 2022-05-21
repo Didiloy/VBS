@@ -12,7 +12,11 @@
           width="auto"
           height="auto"
           class="px-5"
-          :src="book.volumeInfo.imageLinks.large"
+          :src="
+            book.volumeInfo.imageLinks
+              ? book.volumeInfo.imageLinks.large
+              : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'
+          "
           style="border-radius: 20px !important; object-fit: cover"
         ></v-img>
       </v-col>
@@ -194,7 +198,9 @@ export default {
         author: this.book.volumeInfo.authors,
         description: this.book.volumeInfo.description,
         imageLinks: {
-          thumbnail: this.book.volumeInfo.imageLinks.thumbnail,
+          thumbnail: this.book.volumeInfo.imageLinks
+            ? this.book.volumeInfo.imageLinks.thumbnail
+            : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png",
         },
         categories: this.book.volumeInfo.categories,
       };
@@ -227,7 +233,9 @@ export default {
         author: this.book.volumeInfo.authors,
         description: this.book.volumeInfo.description,
         imageLinks: {
-          thumbnail: this.book.volumeInfo.imageLinks.thumbnail,
+          thumbnail: this.book.volumeInfo.imageLinks
+            ? this.book.volumeInfo.imageLinks.thumbnail
+            : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png",
         },
         categories: this.book.volumeInfo.categories,
       };

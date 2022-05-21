@@ -6,7 +6,10 @@
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenAuthor }}</v-chip>
     </v-chip-group>
-    <div class="d-flex wrapper" style="overflow-x: auto" height="400">
+    <div
+      class="d-flex wrapper"
+      style="overflow-x: auto; height: 350px !important"
+    >
       <v-card
         v-for="book in this.authorsBooks"
         :key="book.id"
@@ -29,8 +32,8 @@
         <v-img />
         <v-card-title>
           {{
-            book.volumeInfo.title.length > 35
-              ? book.volumeInfo.title.slice(0, 35) + ".."
+            book.volumeInfo.title.length > 30
+              ? book.volumeInfo.title.slice(0, 30) + ".."
               : book.volumeInfo.title
           }}
         </v-card-title>
@@ -47,7 +50,10 @@
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenCategory }}</v-chip>
     </v-chip-group>
-    <div class="d-flex wrapper" style="overflow-x: auto" height="400">
+    <div
+      class="d-flex wrapper"
+      style="overflow-x: auto; height: 350px !important"
+    >
       <v-card
         v-for="book in this.genreBooks"
         :key="book.id"
@@ -70,8 +76,8 @@
         <v-img />
         <v-card-title>
           {{
-            book.volumeInfo.title.length > 35
-              ? book.volumeInfo.title.slice(0, 35) + ".."
+            book.volumeInfo.title.length > 30
+              ? book.volumeInfo.title.slice(0, 30) + ".."
               : book.volumeInfo.title
           }}
         </v-card-title>
@@ -115,13 +121,11 @@ export default {
     await this.getBooks().then(async () => {
       //Avoir un auteur aléatoire parmis tout les auteurs
       while (
-        this.choosenAuthor === null ||
-        this.choosenAuthor === "" ||
-        this.choosenCategory === null ||
-        this.choosencategory === "" ||
-        this
+        (this.choosenAuthor === null || this.choosenAuthor === "") &&
+        (this.choosenCategory === null || this.choosencategory === "")
       ) {
         //choisir un aléatoire et s'assurer qu'on tire pas une string vide
+        let keys = Object.keys(this.books);
         let author =
           this.books[keys[(keys.length * Math.random()) << 0]].volumeInfo
             .author;
@@ -131,7 +135,6 @@ export default {
         this.choosenAuthor = author;
         this.choosenCategory = genre;
       }
-      let keys = Object.keys(this.books);
       await this.getBooksByauthor(this.choosenAuthor);
       await this.getBooksByGenre(this.choosenCategory);
     });
@@ -140,14 +143,14 @@ export default {
     async getBooks() {
       let books = localStorage.getItem("vbs-bibliotheque");
       this.books = JSON.parse(books);
-      // console.log(this.books);
+      //console.log(this.books);
     },
     async getBooksByauthor(author) {
       await globalSearch(author)
         .then((response) => {
           this.authorsBooks = response.items;
-          console.log("authorsBooks");
-          console.log(this.authorsBooks);
+          // console.log("authorsBooks");
+          // console.log(this.authorsBooks);
         })
         .catch((err) => console.log(err));
     },
@@ -158,8 +161,8 @@ export default {
       await globalSearch("subject:" + genre)
         .then((response) => {
           this.genreBooks = response.items;
-          console.log("genreBooks");
-          console.log(this.genreBooks);
+          // console.log("genreBooks");
+          // console.log(this.genreBooks);
         })
         .catch((err) => console.log(err));
     },
