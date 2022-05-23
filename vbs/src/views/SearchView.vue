@@ -14,10 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <div v-if="Object.keys(books).length > 0">
-    <GridOfCard :books="books" />
-  </div>
-  <div v-else>
+  <div v-if="!computedObjectKeys">
     <v-container class="d-flex flex-column justify-center align-center">
       <v-icon class="grey--text pt-16" x-large>
         sentiment_very_dissatisfied
@@ -26,10 +23,14 @@
       <h2 class="grey--text pt-12">Essayez un autre mot clé.</h2>
     </v-container>
   </div>
+  <div v-else>
+    <GridOfCard :books="books" />
+  </div>
 </template>
 <script>
 import { globalSearch } from "@/api/api.js";
 import GridOfCard from "../components/GridOfCard";
+// import router from "../router/index";
 export default {
   name: "SearchView",
   components: { GridOfCard },
@@ -45,20 +46,30 @@ export default {
     };
   },
   mounted() {
+    console.log("query: " + this.query);
     this.search();
+  },
+  computed: {
+    computedObjectKeys() {
+      return Object.keys(this.books).length > 0;
+    },
   },
   methods: {
     async search() {
       await globalSearch(this.query).then((response) => {
         console.log(response.items);
-        this.books = response.items;
+        if (response.items) {
+          this.books = response.items;
+        } else {
+          this.books = {};
+        }
       });
     },
   },
   watch: {
     //refresh components a chaque changement de name
-    query: function () {
-      this.search();
+    query: async function () {
+      await this.search();
     },
   },
 };
