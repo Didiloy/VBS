@@ -22,11 +22,11 @@
         style="height: 100%"
       >
         <v-img
-          max-height="600"
-          max-width="600"
-          width="auto"
+          max-height="80%"
+          max-width="80%"
+          width="80%"
           height="auto"
-          class="px-5"
+          class="pt-5"
           :src="
             book.volumeInfo.imageLinks
               ? book.volumeInfo.imageLinks.large
@@ -75,7 +75,7 @@
             style="width: 90%"
           ></span>
         </v-row>
-        <v-row align="center" justify="space-around" class="pt-10">
+        <v-row align="center" justify="space-around" class="py-10">
           <v-btn v-if="inBib" class="accent" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
             Supprimer</v-btn

@@ -18,7 +18,7 @@
     <v-icon class="grey--text pt-16" x-large> description </v-icon>
     <h1 class="grey--text Heading 1 py-2">A propos de VBS</h1>
     <p>
-      VBS est une application open-source licencié sous la licence
+      VBS est une application open-source licenciée sous la licence
       <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>.
     </p>
     <p>
@@ -35,7 +35,7 @@
       <a href="https://github.com/Didiloy/VBS/issues">suivi de bugs</a>
     </p>
     <p class="pt-6">
-      Fais avec <v-icon class="accent--text pr-2"> favorite</v-icon> par
+      Fait avec <v-icon class="accent--text pr-2"> favorite</v-icon> par
       <a href="https://www.linkedin.com/in/dylan-loya-993711196/"
         >Dylan Loya
       </a>

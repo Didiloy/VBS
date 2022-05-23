@@ -47,8 +47,8 @@
                 personnalisées par rapport à votre lecture ! <br />
                 Découvrez de nouveaux auteurs ou de nouvelles sagas grâce aux
                 recherches par auteur, titre ou genre ! <br />
-                Pour commencer je vous conseil de jeter un oeil aux best sellers
-                ;)
+                Pour commencer je vous conseille de jeter un oeil aux best
+                sellers ;)
               </div>
             </v-card-text>
 
