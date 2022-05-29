@@ -5,15 +5,11 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint",
-        "generate": "./node_modules/.bin/prisma generate",
-        "db-push": "./node_modules/.bin/prisma db push",
-        "studio": "./node_modules/.bin/prisma studio"
+        "lint": "vue-cli-service lint"
     },
     "dependencies": {
         "core-js": "^3.8.3",
         "cors": "^2.8.5",
-        "notyf": "^3.10.0",
         "vue": "^2.6.14",
         "vue-owl-carousel": "^2.0.3",
         "vue-router": "^3.5.1",

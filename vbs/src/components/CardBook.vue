@@ -57,18 +57,22 @@
         informations
       </v-btn>
     </v-card-actions>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      app
+      right
+      top
+      content-class="d-flex justify-space-between align-center"
+    >
+      {{ snackbarText }}
+      <v-btn color="accent" text @click="snackbar = false"> Fermer </v-btn>
+    </v-snackbar>
   </v-card>
 </template>
 <script>
-import { Notyf } from "notyf";
 import router from "../router/index.js";
-const notyf = new Notyf({
-  duration: 2000,
-  position: {
-    x: "right",
-    y: "top",
-  },
-});
+
 export default {
   name: "CardBook",
   props: {
@@ -108,6 +112,9 @@ export default {
   data: () => {
     return {
       cat: null,
+      snackbar: false,
+      timeout: 2000,
+      snackbarText: "",
     };
   },
   mounted() {
@@ -142,9 +149,9 @@ export default {
         };
         // books = Object.assign(books, bookToAdd);
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
-        notyf.success("Livre enregistré !");
+        this.snackbar = true;
+        this.snackbarText = "Livre enregistré !";
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.log(error);
       }
     },
@@ -159,11 +166,11 @@ export default {
         console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
-        notyf.success("Livre supprimé !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre supprimé !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.log(error);
       }
     },
@@ -178,11 +185,11 @@ export default {
         console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-souhaits", JSON.stringify(books));
-        notyf.success("Livre supprimé !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre supprimé !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.log(error);
       }
     },

@@ -97,19 +97,23 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      app
+      right
+      top
+      content-class="d-flex justify-space-between align-center"
+    >
+      {{ snackbarText }}
+      <v-btn color="accent" text @click="snackbar = false"> Fermer </v-btn>
+    </v-snackbar>
   </div>
 </template>
 <script>
 import { SearchById } from "@/api/api.js";
 import router from "../router/index.js";
-import { Notyf } from "notyf";
-const notyf = new Notyf({
-  duration: 2000,
-  position: {
-    x: "right",
-    y: "top",
-  },
-});
+
 export default {
   name: "InformationView",
   components: {},
@@ -124,6 +128,9 @@ export default {
       book: {},
       inBib: false,
       inSouhaits: false,
+      snackbar: false,
+      timeout: 2000,
+      snackbarText: "",
     };
   },
   mounted() {
@@ -172,11 +179,11 @@ export default {
         // console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
-        notyf.success("Livre supprimé !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre supprimé !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.warn(error);
       }
     },
@@ -191,11 +198,11 @@ export default {
         // console.log(books, this.id);
         delete books[this.id];
         localStorage.setItem("vbs-souhaits", JSON.stringify(books));
-        notyf.success("Livre supprimé !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre supprimé !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.warn(error);
       }
     },
@@ -226,11 +233,11 @@ export default {
         };
         // books = Object.assign(books, bookToAdd);
         localStorage.setItem("vbs-bibliotheque", JSON.stringify(books));
-        notyf.success("Livre enregistré !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre enregistré !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.warn(error);
       }
     },
@@ -261,11 +268,11 @@ export default {
         };
         // books = Object.assign(books, bookToAdd);
         localStorage.setItem("vbs-souhaits", JSON.stringify(books));
-        notyf.success("Livre enregistré !");
-        await new Promise((r) => setTimeout(r, 2500));
+        this.snackbar = true;
+        this.snackbarText = "Livre enregistré !";
+        await new Promise((r) => setTimeout(r, 2000));
         router.go();
       } catch (error) {
-        notyf.error("Un problème est survenu.");
         console.warn(error);
       }
     },
