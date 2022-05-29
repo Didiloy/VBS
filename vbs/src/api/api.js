@@ -22,6 +22,7 @@ const BASE_URL_ID = "https://www.googleapis.com/books/v1/volumes/";
 const maxResults = "maxResults=";
 const orderBy = "orderBy=";
 const printType = "printType=";
+export const AMAZON_URL = "https://www.amazon.com/s?i=stripbooks&k=";
 
 export async function globalSearch(query) {
     return new Promise((resolve, reject) => {

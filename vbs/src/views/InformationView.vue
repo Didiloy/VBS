@@ -76,6 +76,11 @@
           ></span>
         </v-row>
         <v-row align="center" justify="space-around" class="py-10">
+          <v-btn class="amazon" text @click="GoToAmazon">
+            <v-icon class="white--text">shopping_cart</v-icon
+            ><!--Change icon -->
+            Voir sur amazon</v-btn
+          >
           <v-btn v-if="inBib" class="accent" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
             Supprimer</v-btn
@@ -111,7 +116,7 @@
   </div>
 </template>
 <script>
-import { SearchById } from "@/api/api.js";
+import { SearchById, AMAZON_URL } from "@/api/api.js";
 import router from "../router/index.js";
 
 export default {
@@ -131,10 +136,12 @@ export default {
       snackbar: false,
       timeout: 2000,
       snackbarText: "",
+      amazonUrl: "",
     };
   },
-  mounted() {
-    this.search();
+  async mounted() {
+    await this.search();
+    this.amazonUrl = AMAZON_URL + this.book.volumeInfo.title;
   },
   methods: {
     async search() {
@@ -145,6 +152,10 @@ export default {
         this.InBib();
         this.InSouhaits();
       });
+    },
+    //See the book on amazon
+    GoToAmazon() {
+      window.open(this.amazonUrl);
     },
     InBib() {
       let books = localStorage.getItem("vbs-bibliotheque");

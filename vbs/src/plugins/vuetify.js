@@ -37,15 +37,15 @@ export default new Vuetify({
                 accent: "#DF3578",
                 error: "#b71c1c",
                 anchor: "#DF3578",
+                amazon: "#ac8454",
             },
             dark: {
-                // primary: "#292643", //premiere
-                primary: "#292d34", //deuxieme
-                // secondary: "#44426E", //premiere
-                secondary: "#191b1f", //deuxieme
-                accent: "#DF3578", //premiere
+                primary: "#292d34",
+                secondary: "#191b1f",
+                accent: "#DF3578",
                 error: "#b71c1c",
                 anchor: "#DF3578",
+                amazon: "#ac8454",
             },
         },
     },
