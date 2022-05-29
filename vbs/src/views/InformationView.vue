@@ -75,26 +75,31 @@
             style="width: 90%"
           ></span>
         </v-row>
-        <v-row align="center" justify="space-around" class="py-10">
-          <v-btn class="amazon" text @click="GoToAmazon">
+        <v-row align="center" justify="space-around" class="py-5">
+          <v-btn class="amazon mt-5" text @click="GoToAmazon">
             <v-icon class="white--text">shopping_cart</v-icon
             ><!--Change icon -->
             Voir sur amazon</v-btn
           >
-          <v-btn v-if="inBib" class="accent" text @click="DelFromBib">
+          <v-btn v-if="inBib" class="accent mt-5" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
             Supprimer</v-btn
           >
-          <v-btn v-else class="accent" text @click="AddToBib">
+          <v-btn v-else class="accent mt-5" text @click="AddToBib">
             <v-icon class="white--text">favorite</v-icon>
             Ajouter</v-btn
           >
-          <v-btn v-if="inSouhaits" class="accent" text @click="DelFromSouhaits">
+          <v-btn
+            v-if="inSouhaits"
+            class="accent mt-5"
+            text
+            @click="DelFromSouhaits"
+          >
             <v-icon class="white--text">delete</v-icon
             ><!--Change icon -->
             Retirer des souhait</v-btn
           >
-          <v-btn v-else class="accent" text @click="AddToSouhaits">
+          <v-btn v-else class="accent mt-5" text @click="AddToSouhaits">
             <v-icon class="white--text">playlist_add</v-icon
             ><!--Change icon -->
             Liste de souhait</v-btn
