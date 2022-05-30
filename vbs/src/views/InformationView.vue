@@ -76,11 +76,17 @@
           ></span>
         </v-row>
         <v-row align="center" justify="space-around" class="py-5">
-          <v-btn class="amazon mt-5" text @click="GoToAmazon">
-            <v-icon class="white--text">shopping_cart</v-icon
-            ><!--Change icon -->
-            Voir sur amazon</v-btn
+          <a
+            :href="amazonUrl"
+            class="mt-7"
+            style="text-decoration: none; color: #ac8454"
           >
+            <p>
+              <v-icon class="amazon--text">shopping_cart</v-icon> Voir sur
+              amazon
+            </p></a
+          >
+
           <v-btn v-if="inBib" class="accent mt-5" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
             Supprimer</v-btn
