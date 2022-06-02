@@ -19,6 +19,7 @@
     <SideBar :key="key" /><!-- key is for re-render the component -->
     <v-main class="primary">
       <router-view />
+      <LayoutToTopFab />
     </v-main>
   </v-app>
 </template>
@@ -26,6 +27,7 @@
 <script>
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
+import LayoutToTopFab from "./components/LayoutToTopFab.vue";
 export default {
   name: "App",
   data() {
@@ -36,6 +38,7 @@ export default {
   components: {
     NavBar,
     SideBar,
+    LayoutToTopFab,
   },
   mounted() {
     if (localStorage.getItem("vbs-theme").length == 0) {

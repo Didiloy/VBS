@@ -22,31 +22,31 @@ import "material-design-icons-iconfont/dist/material-design-icons.css";
 Vue.use(Vuetify);
 
 export default new Vuetify({
-    icons: {
-        iconfont: "md" || "fa",
+  icons: {
+    iconfont: "md" || "fa",
+  },
+  theme: {
+    options: {
+      customProperties: true,
     },
-    theme: {
-        options: {
-            customProperties: true,
-        },
-        dark: false,
-        themes: {
-            light: {
-                primary: "#D5D5D5",
-                secondary: "#FFFFFF",
-                accent: "#DF3578",
-                error: "#b71c1c",
-                anchor: "#DF3578",
-                amazon: "#ac8454",
-            },
-            dark: {
-                primary: "#292d34",
-                secondary: "#191b1f",
-                accent: "#DF3578",
-                error: "#b71c1c",
-                anchor: "#DF3578",
-                amazon: "#ac8454",
-            },
-        },
+    dark: false,
+    themes: {
+      light: {
+        primary: "#D5D5D5",
+        secondary: "#FFFFFF",
+        accent: "#DF3578",
+        error: "#b71c1c",
+        anchor: "#DF3578",
+        amazon: "#ac8454",
+      },
+      dark: {
+        primary: "#292d34",
+        secondary: "#191b1f",
+        accent: "#DF3578",
+        error: "#b71c1c",
+        anchor: "#DF3578",
+        amazon: "#ac8454",
+      },
     },
+  },
 });

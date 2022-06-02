@@ -42,6 +42,6 @@
         </a>
       </p>
     </v-container>
-    <p class="grey--text pt-16 text-decoration-underline">version 0.2.2</p>
+    <p class="grey--text pt-16 text-decoration-underline">version 0.2.3</p>
   </div>
 </template>

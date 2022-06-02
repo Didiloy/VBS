@@ -6,5 +6,8 @@ Vue Book Suggestions
 
 - mots clés dans la 4eme de couverture
 - inteface mobile
+- sanitize input
 - rentrer soi meme ses mots clés
-- lien amazon au lieu de bouton
+- retirer le label notes googles si il n'y a pas de notes
+- bouton flottant dans la bibliothequepour remonter en haut
+- ajout d'une page pour les versions
