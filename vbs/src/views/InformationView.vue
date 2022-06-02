@@ -64,7 +64,12 @@
         </v-row>
         <v-row align="center" justify="space-around">
           <p class="pt-10 text-body">
-            Note Google: {{ book.volumeInfo.averageRating }}/5
+            {{
+              book.volumeInfo.averageRating !== null &&
+              book.volumeInfo.averageRating !== undefined
+                ? "Note Google: " + book.volumeInfo.averageRating + "/5"
+                : "Pas de note pour ce livre."
+            }}
           </p>
           <p class="pt-10 text-body">{{ book.volumeInfo.pageCount }} pages</p>
         </v-row>
