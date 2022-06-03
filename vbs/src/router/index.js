@@ -68,6 +68,13 @@ const routes = [
     props: true,
   },
   {
+    path: "/version",
+    name: "VersionView",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/VersionView.vue"),
+    props: true,
+  },
+  {
     path: "/about",
     name: "about",
     // route level code-splitting
