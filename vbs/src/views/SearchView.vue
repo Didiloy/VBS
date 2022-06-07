@@ -14,7 +14,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <div v-if="!computedObjectKeys">
+  <!-- Si aucun résultat -->
+  <div v-if="computedNoResults">
     <v-container class="d-flex flex-column justify-center align-center">
       <v-icon class="grey--text pt-16" x-large>
         sentiment_very_dissatisfied
@@ -23,11 +24,27 @@
       <h2 class="grey--text pt-12">Essayez un autre mot clé.</h2>
     </v-container>
   </div>
+  <!-- Si on a des résultats -->
   <div v-else>
-    <GridOfCard :books="books" />
+    <!-- tant qu'on a pas recu les résultats on affiche le skeleton loader -->
+    <div v-if="!computedObjectKeys">
+      <div
+        class="d-flex justify-space-around align-space-around flex-wrap align-self-auto"
+      >
+        <v-skeleton-loader
+          v-bind="attrs"
+          type="image, list-item-three-line, actions"
+          v-for="i in 10"
+          :key="i"
+        ></v-skeleton-loader>
+      </div>
+    </div>
+    <div v-else>
+      <GridOfCard :books="books" />
+    </div>
   </div>
 </template>
-<script>
+<script setup>
 import { globalSearch } from "@/api/api.js";
 import GridOfCard from "../components/GridOfCard";
 // import router from "../router/index";
@@ -43,6 +60,15 @@ export default {
   data: () => {
     return {
       books: {},
+      noResults: false,
+      attrs: {
+        class: "rounded-lg ma-10",
+        boilerplate: false,
+        elevation: 2,
+        width: "350px",
+        loading: false,
+        tile: true,
+      },
     };
   },
   mounted() {
@@ -53,15 +79,19 @@ export default {
     computedObjectKeys() {
       return Object.keys(this.books).length > 0;
     },
+    computedNoResults() {
+      return this.noResults;
+    },
   },
   methods: {
     async search() {
       await globalSearch(this.query).then((response) => {
-        console.log(response.items);
+        //console.log(response.items);
         if (response.items) {
           this.books = response.items;
         } else {
           this.books = {};
+          this.noResults = true;
         }
       });
     },

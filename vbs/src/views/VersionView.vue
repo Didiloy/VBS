@@ -18,6 +18,15 @@
     <div class="d-flex flex-column justify-center align-start">
       <h1 class="grey--text Heading 1 py-2">Versions</h1>
       <div class="py-5">
+        <h3 class="grey--text Heading 3">Version 0.2.5:</h3>
+        <ul>
+          <li>
+            Ajout de skeleton-loader lors du chargement des livres dans la
+            recherche et les recommendations.
+          </li>
+        </ul>
+      </div>
+      <div class="py-5">
         <h3 class="grey--text Heading 3">Version 0.2.4:</h3>
         <ul>
           <li>Ajout de la page de versions.</li>

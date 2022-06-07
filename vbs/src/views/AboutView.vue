@@ -43,7 +43,7 @@
       </p>
     </v-container>
     <p class="grey--text pt-16 text-decoration-underline">
-      <a href="/#/version"> version 0.2.4</a>
+      <a href="/#/version"> version 0.2.5</a>
     </p>
   </div>
 </template>

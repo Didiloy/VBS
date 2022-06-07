@@ -1,6 +1,6 @@
-# VBS
+# Vue Book Suggestion
 
-Vue Book Suggestions
+Get recommendations for books to read based on your interests and what you already read.
 
 # TODO
 
@@ -8,4 +8,4 @@ Vue Book Suggestions
 - inteface mobile
 - sanitize input
 - rentrer soi meme ses mots clés
-- ajout d'une page pour les versions
+- résoudre bug de la recommendation: auteur et genre null
