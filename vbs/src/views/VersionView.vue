@@ -18,6 +18,13 @@
     <div class="d-flex flex-column justify-center align-start">
       <h1 class="grey--text Heading 1 py-2">Versions</h1>
       <div class="py-5">
+        <h3 class="grey--text Heading 3">Version 0.3:</h3>
+        <ul>
+          <li>Implémentation de l'api composition de vuejs.</li>
+          <li>Ajout du bouton pour toggle la sidebar.</li>
+        </ul>
+      </div>
+      <div class="py-5">
         <h3 class="grey--text Heading 3">Version 0.2.5:</h3>
         <ul>
           <li>
