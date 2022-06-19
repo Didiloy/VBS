@@ -45,30 +45,29 @@
 <script>
 // import { globalSearch } from "@/api/api.js";
 import router from "../router/index";
+import { ref } from "@vue/composition-api";
 export default {
   name: "NavBar",
-  data: () => {
-    return {
-      textfield: "",
-    };
-  },
-  methods: {
-    search() {
-      // await globalSearch(this.textfield).then((response) => {
-      //   console.log(response);
-      // });
-      // this.textfield = "";
-      router.replace(`/search/${this.textfield}`);
-      this.textfield = "";
-    },
+  setup() {
+    let textfield = ref("");
+
+    function search() {
+      router.replace(`/search/${textfield.value}`);
+      textfield.value = "";
+    }
     /**
      * Méthode permettant de retourner a la vue HomeView
      */
-    goHome() {
+    function goHome() {
       router.replace(`/`);
-    },
+    }
+
+    return {
+      textfield,
+      search,
+      goHome,
+    };
   },
-  mounted() {},
 };
 </script>
 <style scoped></style>

@@ -58,22 +58,19 @@
 
 <script>
 import router from "../router/index";
+import { ref } from "@vue/composition-api";
 export default {
-  name: "NavBar",
-  data: () => {
-    return {
-      username: "",
-      items: [
-        { title: "Accueil", icon: "home", path: "/" },
-        { title: "Recommandations", icon: "article", path: "/recommandation" },
-        { title: "Liste de souhaits", icon: "playlist_add", path: "/souhaits" },
-        { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
-      ],
-    };
-  },
-  computed: {},
-  methods: {
-    darkMode() {
+  name: "SideBar",
+  setup() {
+    const username = ref("");
+    const items = ref([
+      { title: "Accueil", icon: "home", path: "/" },
+      { title: "Recommandations", icon: "article", path: "/recommandation" },
+      { title: "Liste de souhaits", icon: "playlist_add", path: "/souhaits" },
+      { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
+    ]);
+
+    function darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       let theme = localStorage.getItem("vbs-theme");
       if (!theme) {
@@ -87,11 +84,18 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    },
+    }
 
-    connectBtn() {
+    function connectBtn() {
       router.replace("/login");
-    },
+    }
+
+    return {
+      username,
+      darkMode,
+      items,
+      connectBtn,
+    };
   },
 };
 </script>

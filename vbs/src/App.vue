@@ -16,7 +16,7 @@
 <template>
   <v-app>
     <NavBar />
-    <SideBar :key="key" /><!-- key is for re-render the component -->
+    <SideBar /><!-- key is for re-render the component -->
     <v-main class="primary">
       <router-view />
       <LayoutToTopFab />
