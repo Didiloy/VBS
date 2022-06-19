@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <v-navigation-drawer app class="primary" clipped permanent>
+  <v-navigation-drawer app class="primary" clipped v-model="drawer">
     <v-list nav dense>
       <v-list-item-group active-class="accent--text text--accent">
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
@@ -57,12 +57,16 @@
 </template>
 
 <script>
-import router from "../router/index";
+/* eslint-disable vue/no-mutating-props */
 import { ref } from "@vue/composition-api";
 export default {
   name: "SideBar",
+  props: {
+    drawerEvent: Boolean,
+  },
   setup() {
     const username = ref("");
+    // let drawer = ref(props.drawerEvent);
     const items = ref([
       { title: "Accueil", icon: "home", path: "/" },
       { title: "Recommandations", icon: "article", path: "/recommandation" },
@@ -86,16 +90,20 @@ export default {
       }
     }
 
-    function connectBtn() {
-      router.replace("/login");
-    }
-
     return {
       username,
       darkMode,
       items,
-      connectBtn,
+      // drawer,
     };
+  },
+  computed: {
+    drawer: {
+      get: function () {
+        return this.drawerEvent;
+      },
+      set: function () {},
+    },
   },
 };
 </script>

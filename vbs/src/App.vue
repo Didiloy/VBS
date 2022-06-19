@@ -15,8 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
   <v-app>
-    <NavBar />
-    <SideBar /><!-- key is for re-render the component -->
+    <NavBar @drawerEvent="test" />
+    <SideBar :drawerEvent="computedDrawer" />
     <v-main class="primary">
       <router-view />
       <LayoutToTopFab />
@@ -32,7 +32,7 @@ export default {
   name: "App",
   data() {
     return {
-      key: 0,
+      drawer: null,
     };
   },
   components: {
@@ -55,7 +55,16 @@ export default {
       );
     }
   },
-  methods: {},
+  methods: {
+    test() {
+      console.log((this.drawer = !this.drawer));
+    },
+  },
+  computed: {
+    computedDrawer() {
+      return this.drawer;
+    },
+  },
 };
 </script>
 <style scoped></style>

@@ -15,6 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
   <v-app-bar class="secondary" flat dense app clipped-left>
+    <v-app-bar-nav-icon @click="$emit('drawerEvent')"></v-app-bar-nav-icon>
     <v-toolbar-title class="text-uppercase grey--text" @click="goHome"
       >vbs</v-toolbar-title
     >
@@ -43,11 +44,11 @@
 </template>
 
 <script>
-// import { globalSearch } from "@/api/api.js";
 import router from "../router/index";
 import { ref } from "@vue/composition-api";
 export default {
   name: "NavBar",
+  emits: ["drawerEvent"],
   setup() {
     let textfield = ref("");
 
