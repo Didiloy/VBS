@@ -20,6 +20,7 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 import VueCompositionAPI from "@vue/composition-api";
+import i18n from './i18n'
 
 Vue.config.productionTip = false;
 Vue.use(VueCompositionAPI);
@@ -29,5 +30,6 @@ new Vue({
     store,
     vuetify,
     VueCompositionAPI,
-    render: (h) => h(App),
+    i18n,
+    render: (h) => h(App)
 }).$mount("#app");

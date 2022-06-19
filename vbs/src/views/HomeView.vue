@@ -16,9 +16,11 @@
 <template>
   <div>
     <v-container class="d-flex flex-column justify-center align-center">
-      <h1 class="grey--text Heading 1 pt-16">Bienvenue dans VBS !</h1>
+      <h1 class="grey--text Heading 1 pt-16">
+        {{ $t("HomeView.welcome") }}
+      </h1>
       <h3 class="grey--text pt-8">
-        Voici quelques éléments pour vous aider à poursuivre...
+        {{ $t("HomeView.subtitle") }}
       </h3>
       <!-- Big first card -->
       <v-card
@@ -40,7 +42,7 @@
           </div>
           <div class="" width="75% !important">
             <v-card-text class="text--primary">
-              <v-card-title> Bienvenue ! </v-card-title>
+              <v-card-title> {{ $t("HomeView.big_card_title") }} </v-card-title>
               <div>
                 Bienvenue sur <b>VBS</b>, cherchez et ajoutez des livres dans
                 votre bibliothèque pour profiter des recommendations
