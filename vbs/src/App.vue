@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
   <v-app>
-    <NavBar @drawerEvent="test" />
+    <NavBar @drawerEvent="changeDrawerState" />
     <SideBar :drawerEvent="computedDrawer" />
     <v-main class="primary">
       <router-view />
@@ -56,7 +56,7 @@ export default {
     }
   },
   methods: {
-    test() {
+    changeDrawerState() {
       console.log((this.drawer = !this.drawer));
     },
   },
