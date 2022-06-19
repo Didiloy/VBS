@@ -32,7 +32,7 @@ export default {
   name: "App",
   data() {
     return {
-      drawer: null,
+      drawer: true,
     };
   },
   components: {
