@@ -17,33 +17,29 @@
   <div class="d-flex flex-column justify-space-between align-center">
     <v-container class="d-flex flex-column justify-center align-start">
       <v-icon class="grey--text pt-16" x-large> description </v-icon>
-      <h1 class="grey--text Heading 1 py-2">A propos de VBS</h1>
-      <p>
-        VBS est une application open-source licenciée sous la licence
-        <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPLv3</a>.
-      </p>
-      <p>
-        Vous pouvez trouver le code source de VBS sur
-        <a href="https://github.com/Didiloy/VBS">Github</a>
-      </p>
+      <h1 class="grey--text Heading 1 py-2">{{ $t("AboutView.title") }}</h1>
+      <p v-html="$t('AboutView.licence')"></p>
+      <p v-html="$t('AboutView.find_source_code')"></p>
       <h2 class="grey--text pt-2">
-        Signaler un problème, demander une fonctionnalité
+        {{ $t("AboutView.report_bug") }}
       </h2>
-      <p>
-        Bien que VBS soit stable dans l'ensemble, des bugs peuvent encore
-        apparaître. N'hésitez pas à les signaler, ou à demander des
-        fonctionnalités que vous voudriez voir en utilisant le
-        <a href="https://github.com/Didiloy/VBS/issues">suivi de bugs</a>
-      </p>
+      <p v-html="$t('AboutView.report_bug_text')"></p>
       <p class="pt-6">
-        Fait avec <v-icon class="accent--text pr-2"> favorite</v-icon> par
+        {{ $t("AboutView.made_with") }}
+        <v-icon class="accent--text pr-2"> favorite</v-icon>
+        {{ $t("AboutView.by") }}
         <a href="https://www.linkedin.com/in/dylan-loya-993711196/"
-          >Dylan Loya
-        </a>
+          >Dylan Loya</a
+        >
       </p>
     </v-container>
     <p class="grey--text pt-16 text-decoration-underline">
-      <a href="/#/version"> version 0.3</a>
+      <a href="/#/version"> {{ $t("AboutView.version") }} 0.3</a>
     </p>
   </div>
 </template>
+<script>
+export default {
+  name: "AboutView",
+};
+</script>

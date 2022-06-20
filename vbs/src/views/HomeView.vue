@@ -43,16 +43,14 @@
           <div class="" width="75% !important">
             <v-card-text class="text--primary">
               <v-card-title> {{ $t("HomeView.big_card_title") }} </v-card-title>
-              <div v-html="$t('HomeView.big_card_body')">
-              </div>
+              <div v-html="$t('HomeView.big_card_body')"></div>
             </v-card-text>
 
             <v-card-actions class="pl-16 justify-end">
               <v-btn color="accent" text @click="search('inspirational')">
                 <v-icon class="accent--text">favorite</v-icon>
                 {{ $t("HomeView.big_card_button") }}
-               </v-btn
-              >
+              </v-btn>
             </v-card-actions>
           </div>
         </div>
@@ -73,7 +71,9 @@
             src="@/assets/livre_cafe_fenetre.jpg"
           >
           </v-img>
-          <v-card-title> {{ $t("HomeView.littles_cards.card_1.title") }}</v-card-title>
+          <v-card-title>
+            {{ $t("HomeView.littles_cards.card_1.title") }}</v-card-title
+          >
           <v-card-subtitle class="pb-0">
             {{ $t("HomeView.littles_cards.card_1.subtitle") }}</v-card-subtitle
           >
@@ -82,8 +82,7 @@
             <v-btn color="accent" text @click="search('fantasy')">
               <v-icon class="accent--text">rocket_launch</v-icon>
               {{ $t("HomeView.littles_cards.card_1.button") }}
-              </v-btn
-            >
+            </v-btn>
           </v-card-actions>
         </v-card>
         <v-card
@@ -97,17 +96,17 @@
             src="@/assets/livre_fenetre_clair.jpg"
           >
           </v-img>
-          <v-card-title> {{ $t("HomeView.littles_cards.card_2.title") }}</v-card-title>
+          <v-card-title>
+            {{ $t("HomeView.littles_cards.card_2.title") }}</v-card-title
+          >
           <v-card-subtitle class="pb-0">
             {{ $t("HomeView.littles_cards.card_2.subtitle") }}
-            </v-card-subtitle
-          >
+          </v-card-subtitle>
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('romance')">
               <v-icon class="accent--text">favorite</v-icon>
               {{ $t("HomeView.littles_cards.card_2.button") }}
-              </v-btn
-            >
+            </v-btn>
           </v-card-actions>
         </v-card>
         <v-card
@@ -121,17 +120,17 @@
             src="@/assets/bookshelf.jpg"
           >
           </v-img>
-          <v-card-title>{{ $t("HomeView.littles_cards.card_3.title") }}</v-card-title>
+          <v-card-title>{{
+            $t("HomeView.littles_cards.card_3.title")
+          }}</v-card-title>
           <v-card-subtitle class="pb-0">
             {{ $t("HomeView.littles_cards.card_3.subtitle") }}
-            </v-card-subtitle
-          >
+          </v-card-subtitle>
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('thriller')">
               <v-icon class="accent--text">question_mark</v-icon>
               {{ $t("HomeView.littles_cards.card_3.button") }}
-              </v-btn
-            >
+            </v-btn>
           </v-card-actions>
         </v-card>
       </div>

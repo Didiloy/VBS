@@ -17,7 +17,9 @@
   <div v-if="Object.keys(books).length > 0">
     <!-- Design here -->
     <!-- Recommandation par auteur -->
-    <h1 class="text-h4 ml-5">Plus du même auteur</h1>
+    <h1 class="text-h4 ml-5">
+      {{ $t("RecommendationView.more_from_author") }}
+    </h1>
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenAuthor }}</v-chip>
     </v-chip-group>
@@ -26,9 +28,11 @@
         <v-icon class="grey--text pt-16" x-large>
           sentiment_very_dissatisfied
         </v-icon>
-        <h1 class="grey--text Heading 1 pt-2">Aucuns livres trouvés !</h1>
+        <h1 class="grey--text Heading 1 pt-2">
+          {{ $t("RecommendationView.no_book_found") }}
+        </h1>
         <h2 class="grey--text pt-2">
-          Rechargez la page pour en avoir d'autres.
+          {{ $t("RecommendationView.refresh_page") }}
         </h2>
       </v-container>
     </div>
@@ -81,14 +85,16 @@
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="Information(book.id)">
               <v-icon class="accent--text">add</v-icon>
-              informations
+              {{ $t("RecommendationView.button_information") }}
             </v-btn>
           </v-card-actions>
         </v-card>
       </div>
     </div>
     <!-- Recommandations par genre -->
-    <h1 class="text-h4 mt-5 ml-5">Plus du même genre</h1>
+    <h1 class="text-h4 mt-5 ml-5">
+      {{ $t("RecommendationView.more_from_genre") }}
+    </h1>
     <v-chip-group active-class="accent white--text" column>
       <v-chip class="ml-5">{{ this.choosenCategory }}</v-chip>
     </v-chip-group>
@@ -97,9 +103,11 @@
         <v-icon class="grey--text pt-16" x-large>
           sentiment_very_dissatisfied
         </v-icon>
-        <h1 class="grey--text Heading 1 pt-2">Aucuns livres trouvés !</h1>
+        <h1 class="grey--text Heading 1 pt-2">
+          {{ $t("RecommendationView.no_book_found") }}
+        </h1>
         <h2 class="grey--text pt-2">
-          Rechargez la page pour en avoir d'autres.
+          {{ $t("RecommendationView.refresh_page") }}
         </h2>
       </v-container>
     </div>
@@ -152,7 +160,7 @@
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="Information(book.id)">
               <v-icon class="accent--text">add</v-icon>
-              informations
+              {{ $t("RecommendationView.button_information") }}
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -164,8 +172,12 @@
       <v-icon class="grey--text pt-16 ic" x-large>
         sentiment_very_dissatisfied
       </v-icon>
-      <h1 class="grey--text Heading 1 pt-16">Vous n'avez aucun livre !</h1>
-      <h2 class="grey--text pt-12">Recherchez en pour en ajouter.</h2>
+      <h1 class="grey--text Heading 1 pt-16">
+        {{ $t("RecommendationView.no_book_found") }}
+      </h1>
+      <h2 class="grey--text pt-12">
+        {{ $t("RecommendationView.refresh_page") }}
+      </h2>
     </v-container>
   </div>
 </template>

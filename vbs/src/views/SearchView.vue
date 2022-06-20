@@ -20,8 +20,12 @@
       <v-icon class="grey--text pt-16" x-large>
         sentiment_very_dissatisfied
       </v-icon>
-      <h1 class="grey--text Heading 1 pt-16">Aucun livre trouvés !</h1>
-      <h2 class="grey--text pt-12">Essayez un autre mot clé.</h2>
+      <h1 class="grey--text Heading 1 pt-16">
+        {{ $t("SearchView.no_book_found") }}
+      </h1>
+      <h2 class="grey--text pt-12">
+        {{ $t("SearchView.try_other_keywords") }}
+      </h2>
     </v-container>
   </div>
   <!-- Si on a des résultats -->
@@ -44,7 +48,7 @@
     </div>
   </div>
 </template>
-<script setup>
+<script>
 import { globalSearch } from "@/api/api.js";
 import GridOfCard from "../components/GridOfCard";
 // import router from "../router/index";

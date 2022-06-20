@@ -71,7 +71,9 @@
                 : "Pas de note pour ce livre."
             }}
           </p>
-          <p class="pt-10 text-body">{{ book.volumeInfo.pageCount }} {{$t('InformationView.nb_page')}}</p>
+          <p class="pt-10 text-body">
+            {{ book.volumeInfo.pageCount }} {{ $t("InformationView.nb_page") }}
+          </p>
         </v-row>
         <v-row align="center" justify="space-around">
           <span
@@ -87,18 +89,18 @@
             style="text-decoration: none; color: #ac8454"
           >
             <p>
-              <v-icon class="amazon--text">shopping_cart</v-icon> 
-              {{$t('InformationView.see_on_amazon')}}
+              <v-icon class="amazon--text">shopping_cart</v-icon>
+              {{ $t("InformationView.see_on_amazon") }}
             </p></a
           >
 
           <v-btn v-if="inBib" class="accent mt-5" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
-            {{$t('InformationView.delete')}}</v-btn
+            {{ $t("InformationView.delete") }}</v-btn
           >
           <v-btn v-else class="accent mt-5" text @click="AddToBib">
             <v-icon class="white--text">favorite</v-icon>
-            {{$t('InformationView.add')}}</v-btn
+            {{ $t("InformationView.add") }}</v-btn
           >
           <v-btn
             v-if="inSouhaits"
@@ -108,12 +110,12 @@
           >
             <v-icon class="white--text">delete</v-icon
             ><!--Change icon -->
-           {{$t('InformationView.delete_wishlist')}}</v-btn
+            {{ $t("InformationView.delete_wishlist") }}</v-btn
           >
           <v-btn v-else class="accent mt-5" text @click="AddToSouhaits">
             <v-icon class="white--text">playlist_add</v-icon
             ><!--Change icon -->
-            {{$t('InformationView.add_wishlist')}}</v-btn
+            {{ $t("InformationView.add_wishlist") }}</v-btn
           >
         </v-row>
       </v-col>
@@ -127,7 +129,9 @@
       content-class="d-flex justify-space-between align-center"
     >
       {{ snackbarText }}
-      <v-btn color="accent" text @click="snackbar = false"> {{$t('InformationView.close_snackbar')}} </v-btn>
+      <v-btn color="accent" text @click="snackbar = false">
+        {{ $t("InformationView.close_snackbar") }}
+      </v-btn>
     </v-snackbar>
   </div>
 </template>

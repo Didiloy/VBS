@@ -31,5 +31,34 @@
         "delete_wishlist": "Supprimer des souhaits",
         "add_wishlist": "Liste de souhaits",
         "close_snackbar": "Fermer"
+    },
+    "BibView": {
+        "no_books": "Vous n'avez pas encore ajouté de livres à votre bibliothèque.",
+        "search_to_add": "Recherchez en pour en ajouter."
+    },
+    "SouhaitsView": {
+        "no_books": "Vous n'avez pas encore ajouté de livres à votre bibliothèque.",
+        "search_to_add": "Recherchez en pour en ajouter."
+    },
+    "SearchView": {
+        "no_book_found": "Aucun livre trouvé.",
+        "try_other_keywords": "Essayez d'autres mots-clés."
+    },
+    "RecommendationView": {
+        "more_from_author": "Plus de livres de cet auteur",
+        "more_from_genre": "Plus de livres de ce genre",
+        "no_book_found": "Aucun livre trouvé.",
+        "refresh_page": "Rechargez la page pour en avoir d'autres.",
+        "button_information": "Informations"
+    },
+    "AboutView": {
+        "title": "À propos de VBS",
+        "licence": "VBS est une application open-source licenciée sous la licence <a href = \"https://www.gnu.org/licenses/gpl-3.0.html\">GNU GPLv3</a>.",
+        "find_source_code": "Vous pouvez trouver le code source de VBS sur <a href=\"https://github.com/Didiloy/VBS\">Github</a>",
+        "report_bug": "Signaler un problème, demander une fonctionnalité",
+        "report_bug_text": "Bien que VBS soit stable dans l'ensemble, des bugs peuvent encore apparaître. N'hésitez pas à les signaler, ou à demander des fonctionnalités que vous voudriez voir en utilisant le <a href=\"https://github.com/Didiloy/VBS/issues\">suivi de bugs</a>",
+        "made_with": "Fait avec",
+        "by": "par ",
+        "version": "Version"
     }
 }

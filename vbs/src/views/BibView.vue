@@ -22,8 +22,8 @@
       <v-icon class="grey--text pt-16" x-large>
         sentiment_very_dissatisfied
       </v-icon>
-      <h1 class="grey--text Heading 1 pt-16">Vous n'avez aucun livre !</h1>
-      <h2 class="grey--text pt-12">Recherchez en pour en ajouter.</h2>
+      <h1 class="grey--text Heading 1 pt-16">{{ $t("BibView.no_books") }}</h1>
+      <h2 class="grey--text pt-12">{{ $t("BibView.search_to_add") }}</h2>
     </v-container>
   </div>
 </template>
