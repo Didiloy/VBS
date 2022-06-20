@@ -2,6 +2,25 @@
     "HomeView": {
         "welcome": "Bienvenue dans VBS!",
         "subtitle": "Voici quelques éléments pour vous aider à poursuivre...",
-        "big_card_title": "Bienvenue !"
+        "big_card_title": "Bienvenue !",
+        "big_card_body": "Bienvenue sur <b>VBS</b>, cherchez et ajoutez des livres dans votre bibliothèque pour profiter des recommendations personnalisées par rapport à votre lecture ! <br /> Découvrez de nouveaux auteurs ou de nouvelles sagas grâce aux recherches par auteur, titre ou genre ! <br /> Pour commencer je vous conseille de jeter un oeil aux best sellers ;)",
+        "big_card_button": " Voir les best-sellers !",
+        "littles_cards": {
+            "card_1": {
+                "title": "Fiction",
+                "subtitle": "Envie de s'évader dans un autre monde ?",
+                "button": "Voir les livres de fiction !"
+            },
+            "card_2": {
+                "title": "Romance",
+                "subtitle": "Envie de voyager au pays de l'amour ?",
+                "button": "Voir les livres de romance !"
+            },
+            "card_3": {
+                "title": "Mystère",
+                "subtitle": "Envi de se creuser la tête ?",
+                "button": "Je veux du mystère !"
+            }
+        }
     }
 }

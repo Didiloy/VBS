@@ -43,21 +43,15 @@
           <div class="" width="75% !important">
             <v-card-text class="text--primary">
               <v-card-title> {{ $t("HomeView.big_card_title") }} </v-card-title>
-              <div>
-                Bienvenue sur <b>VBS</b>, cherchez et ajoutez des livres dans
-                votre bibliothèque pour profiter des recommendations
-                personnalisées par rapport à votre lecture ! <br />
-                Découvrez de nouveaux auteurs ou de nouvelles sagas grâce aux
-                recherches par auteur, titre ou genre ! <br />
-                Pour commencer je vous conseille de jeter un oeil aux best
-                sellers ;)
+              <div v-html="$t('HomeView.big_card_body')">
               </div>
             </v-card-text>
 
             <v-card-actions class="pl-16 justify-end">
               <v-btn color="accent" text @click="search('inspirational')">
                 <v-icon class="accent--text">favorite</v-icon>
-                Voir les best-sellers !</v-btn
+                {{ $t("HomeView.big_card_button") }}
+               </v-btn
               >
             </v-card-actions>
           </div>
@@ -79,15 +73,16 @@
             src="@/assets/livre_cafe_fenetre.jpg"
           >
           </v-img>
-          <v-card-title>Fiction</v-card-title>
+          <v-card-title> {{ $t("HomeView.littles_cards.card_1.title") }}</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envie de s'évader dans un autre monde ?</v-card-subtitle
+            {{ $t("HomeView.littles_cards.card_1.subtitle") }}</v-card-subtitle
           >
 
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('fantasy')">
               <v-icon class="accent--text">rocket_launch</v-icon>
-              Voir les livres de fiction !</v-btn
+              {{ $t("HomeView.littles_cards.card_1.button") }}
+              </v-btn
             >
           </v-card-actions>
         </v-card>
@@ -102,14 +97,16 @@
             src="@/assets/livre_fenetre_clair.jpg"
           >
           </v-img>
-          <v-card-title> Romance</v-card-title>
+          <v-card-title> {{ $t("HomeView.littles_cards.card_2.title") }}</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envie de voyager au pays de l'amour ?</v-card-subtitle
+            {{ $t("HomeView.littles_cards.card_2.subtitle") }}
+            </v-card-subtitle
           >
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('romance')">
               <v-icon class="accent--text">favorite</v-icon>
-              Voir les livres de romance !</v-btn
+              {{ $t("HomeView.littles_cards.card_2.button") }}
+              </v-btn
             >
           </v-card-actions>
         </v-card>
@@ -124,14 +121,16 @@
             src="@/assets/bookshelf.jpg"
           >
           </v-img>
-          <v-card-title>Mystère</v-card-title>
+          <v-card-title>{{ $t("HomeView.littles_cards.card_3.title") }}</v-card-title>
           <v-card-subtitle class="pb-0">
-            Envi de se creuser la tête ?</v-card-subtitle
+            {{ $t("HomeView.littles_cards.card_3.subtitle") }}
+            </v-card-subtitle
           >
           <v-card-actions class="justify-end">
             <v-btn color="accent" text @click="search('thriller')">
               <v-icon class="accent--text">question_mark</v-icon>
-              Je veux du mystère !</v-btn
+              {{ $t("HomeView.littles_cards.card_3.button") }}
+              </v-btn
             >
           </v-card-actions>
         </v-card>
