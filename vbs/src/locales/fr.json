@@ -22,5 +22,14 @@
                 "button": "Je veux du mystère !"
             }
         }
+    },
+    "InformationView": {
+        "nb_page": "pages",
+        "see_on_amazon": "Voir sur Amazon",
+        "delete": "Supprimer",
+        "add": "Ajouter",
+        "delete_wishlist": "Supprimer des souhaits",
+        "add_wishlist": "Liste de souhaits",
+        "close_snackbar": "Fermer"
     }
 }
