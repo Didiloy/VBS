@@ -16,28 +16,36 @@
 <template>
   <v-container class="d-flex flex-column justify-center align-center">
     <div class="d-flex flex-column justify-center align-start">
-      <h1 class="grey--text Heading 1 py-2">{{$t('VersionView.title')}}</h1>
+      <h1 class="grey--text Heading 1 py-2">{{ $t("VersionView.title") }}</h1>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.3:</h3>
-        <ul v-html="$t('VersionView.0.3.ul')"></ul>
+        <h3 class="grey--text Heading 3">
+          {{ $t("VersionView.version") }} 0.3:
+        </h3>
+        <ul v-html="$t('VersionView.0_3.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.5:</h3>
-        <ul v-html="$t('VersionView.0.2.5.ul')"></ul>
+        <h3 class="grey--text Heading 3">
+          {{ $t("VersionView.version") }} 0.2.5:
+        </h3>
+        <ul v-html="$t('VersionView.0_2_5.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.4:</h3>
-        <ul v-html="$t('VersionView.0.2.4.ul')"></ul>
+        <h3 class="grey--text Heading 3">
+          {{ $t("VersionView.version") }} 0.2.4:
+        </h3>
+        <ul v-html="$t('VersionView.0_2_4.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.3:</h3>
-        <ul v-html="$t('VersionView.0.2.3.ul')"></ul>
+        <h3 class="grey--text Heading 3">
+          {{ $t("VersionView.version") }} 0.2.3:
+        </h3>
+        <ul v-html="$t('VersionView.0_2_3.ul')"></ul>
       </div>
     </div>
   </v-container>
 </template>
 <script>
 export default {
-  name: 'VersionView',
-}
+  name: "VersionView",
+};
 </script>

@@ -76,7 +76,6 @@ export default {
     };
   },
   mounted() {
-    console.log("query: " + this.query);
     this.search();
   },
   computed: {

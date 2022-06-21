@@ -64,17 +64,27 @@
     "VersionView": {
         "title": "Version",
         "version": "Version",
-        "0.3": {
+        "0_3": {
             "ul": "<li>Implémentation de l'api composition de vuejs.</li><li>Ajout du bouton pour toggle la sidebar.</li>"
         },
-        "0.2.5": {
+        "0_2_5": {
             "ul": "<li>Ajout de skeleton-loader lors du chargement des livres dans la recherche et les recommendations.</li>"
         },
-        "0.2.4": {
+        "0_2_4": {
             "ul": "<li>Ajout de la page de versions.</li>"
         },
-        "0.2.3": {
+        "0_2_3": {
             "ul": "<li>Ajout du bouton flottant pour revenir en haut de la page.</li><li>Ajout d'un placeholder quand la note google n'est pas disponible.</li><li>Ajout de notifications lors de l'ajout et la suppression de livres à la bibliothèque / liste de souhaits.</li>"
         }
+    },
+    "SideBar": {
+        "title_1": "Acceuil",
+        "title_2": "Recommandations",
+        "title_3": "Liste de souhaits",
+        "title_4": "Bibliothèque"
+    },
+    "NavBar": {
+        "search_placeholder": "subject:fiction pour restreindre la recherche",
+        "search_label": "Recherche"
     }
 }

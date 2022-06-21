@@ -20,7 +20,7 @@
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
           <v-list-item-title>
             <v-icon class="grey--text">{{ items.icon }}</v-icon>
-            {{ items.title }}
+            {{ $t(`SideBar.title_${i + 1}`) }}
           </v-list-item-title>
         </v-list-item>
       </v-list-item-group>
@@ -37,16 +37,37 @@
             </div>
           </div>
           <div class="d-flex justify-space-around">
-            <div class="mt-4">
-              <p class="grey--text">Dark mode</p>
+            <div class="d-flex justify-space-around">
+              <div class="mt-4 mr-4">
+                <p class="grey--text"><v-icon>dark_mode</v-icon></p>
+              </div>
+              <div>
+                <v-switch
+                  inset
+                  color="secondary"
+                  @click="darkMode()"
+                ></v-switch>
+              </div>
             </div>
-            <div>
-              <v-switch inset color="secondary" @click="darkMode()"></v-switch>
+            <div class="locale-changer mt-4">
+              <select
+                v-model="$i18n.locale"
+                class="accent--text pa-1"
+                style="border: 1px solid; border-radius: 5px"
+              >
+                <option
+                  v-for="locale in $i18n.availableLocales"
+                  :key="`locale-${locale}`"
+                  :value="locale"
+                >
+                  {{ locale.toUpperCase() }}
+                </option>
+              </select>
             </div>
           </div>
           <div>
             <v-btn class="accent" to="/about">
-              <v-icon class="white--text pr-2"> login</v-icon>
+              <v-icon class="white--text pr-2"> info</v-icon>
               A propos
             </v-btn>
           </div>
@@ -68,7 +89,7 @@ export default {
     const username = ref("");
     // let drawer = ref(props.drawerEvent);
     const items = ref([
-      { title: "Accueil", icon: "home", path: "/" },
+      { title: "Acceuil", icon: "home", path: "/" },
       { title: "Recommandations", icon: "article", path: "/recommandation" },
       { title: "Liste de souhaits", icon: "playlist_add", path: "/souhaits" },
       { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
