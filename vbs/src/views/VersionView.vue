@@ -16,42 +16,28 @@
 <template>
   <v-container class="d-flex flex-column justify-center align-center">
     <div class="d-flex flex-column justify-center align-start">
-      <h1 class="grey--text Heading 1 py-2">Versions</h1>
+      <h1 class="grey--text Heading 1 py-2">{{$t('VersionView.title')}}</h1>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">Version 0.3:</h3>
-        <ul>
-          <li>Implémentation de l'api composition de vuejs.</li>
-          <li>Ajout du bouton pour toggle la sidebar.</li>
-        </ul>
+        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.3:</h3>
+        <ul v-html="$t('VersionView.0.3.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">Version 0.2.5:</h3>
-        <ul>
-          <li>
-            Ajout de skeleton-loader lors du chargement des livres dans la
-            recherche et les recommendations.
-          </li>
-        </ul>
+        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.5:</h3>
+        <ul v-html="$t('VersionView.0.2.5.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">Version 0.2.4:</h3>
-        <ul>
-          <li>Ajout de la page de versions.</li>
-        </ul>
+        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.4:</h3>
+        <ul v-html="$t('VersionView.0.2.4.ul')"></ul>
       </div>
       <div class="py-5">
-        <h3 class="grey--text Heading 3">Version 0.2.3:</h3>
-        <ul>
-          <li>Ajout du bouton flottant pour revenir en haut de la page.</li>
-          <li>
-            Ajout d'un placeholder quand la note google n'est pas disponible.
-          </li>
-          <li>
-            Ajout de notifications lors de l'ajout et la suppression de livres à
-            la bibliothèque / liste de souhaits.
-          </li>
-        </ul>
+        <h3 class="grey--text Heading 3">{{$t('VersionView.version')}} 0.2.3:</h3>
+        <ul v-html="$t('VersionView.0.2.3.ul')"></ul>
       </div>
     </div>
   </v-container>
 </template>
+<script>
+export default {
+  name: 'VersionView',
+}
+</script>
