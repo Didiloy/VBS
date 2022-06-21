@@ -21,7 +21,16 @@
     >
 
     <v-spacer></v-spacer>
-    <select
+    <v-select
+      v-model="selected_categorie"
+      :items="categories"
+      outlined
+      dense
+      class="accent--text pa-1 shrink mx-2 mt-6"
+      style="width: 10%"
+      item-color="accent"
+    ></v-select>
+    <!-- <select
       v-model="selected_categorie"
       class="accent--text pa-1"
       style="border: 1px solid; border-radius: 5px"
@@ -29,7 +38,7 @@
       <option v-for="cat in categories" :key="cat" :value="cat">
         {{ cat }}
       </option>
-    </select>
+    </select> -->
     <v-text-field
       :label="$t('NavBar.search_label')"
       :placeholder="$t('NavBar.search_placeholder')"
