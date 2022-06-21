@@ -1,3 +1,80 @@
 {
-    "message": "hello i18n !!"
+    "HomeView": {
+        "welcome": "Welcome to VBS!",
+        "subtitle": "Here are a few things to help you get started...",
+        "big_card_title": "Welcome !",
+        "big_card_body": "Welcome to <b>VBS</b>, Search and add books to your library to enjoy personalized recommendations for your reading! <br />Discover new authors or new sagas thanks to the author, title or genre searches! <br /> To begin with I advise you to have a look at the best sellers ;)",
+        "big_card_button": "See the bestsellers!",
+        "littles_cards": {
+            "card_1": {
+                "title": "Fiction",
+                "subtitle": "Want to escape to another world?",
+                "button": "See the fiction books!"
+            },
+            "card_2": {
+                "title": "Romance",
+                "subtitle": "Want to travel to the land of love?",
+                "button": "See the romance books!"
+            },
+            "card_3": {
+                "title": "Mystery",
+                "subtitle": "Want to rack your brains?",
+                "button": "I want mystery!"
+            }
+        }
+    },
+    "InformationView": {
+        "nb_page": "pages",
+        "see_on_amazon": "See on Amazon",
+        "delete": "Delete",
+        "add": "Add",
+        "delete_wishlist": "Delete from wishlist",
+        "add_wishlist": "Add to wishlist",
+        "close_snackbar": "Close"
+    },
+    "BibView": {
+        "no_books": "You have not yet added any books to your library.",
+        "search_to_add": "Search for them to add them."
+    },
+    "SouhaitsView": {
+        "no_books": "You have not yet added any books to your wishlist.",
+        "search_to_add": "Search for them to add them."
+    },
+    "SearchView": {
+        "no_book_found": "No book found.",
+        "try_other_keywords": "Try other keywords."
+    },
+    "RecommendationView": {
+        "more_from_author": "More books from this author",
+        "more_from_genre": "More books in this genre",
+        "no_book_found": "No book found.",
+        "refresh_page": "Reload the page to have more.",
+        "button_information": "Informations"
+    },
+    "AboutView": {
+        "title": "About VBS",
+        "licence": "VBS is an open-source application licensed under the <a href = \"https://www.gnu.org/licenses/gpl-3.0.html\">GNU GPLv3</a>.",
+        "find_source_code": "You can find the source code of VBS on <a href=\"https://github.com/Didiloy/VBS\">Github</a>",
+        "report_bug": "Report a problem, request a feature",
+        "report_bug_text": "Although VBS is stable overall, bugs may still appear. Feel free to report them, or to ask for features you would like to see using the <a href=\"https://github.com/Didiloy/VBS/issues\">issue tracker</a>",
+        "made_with": "Made with",
+        "by": "by ",
+        "version": "Version"
+    },
+    "VersionView": {
+        "title": "Version",
+        "version": "Version",
+        "0.3": {
+            "ul": "<li>Implementing the composition api of vuejs.</li><li> added button to toggle the sidebar.</li>"
+        },
+        "0.2.5": {
+            "ul": "<li>Added skeleton-loader when loading books in the search and recommendations.</li>"
+        },
+        "0.2.4": {
+            "ul": "<li>Added the versions page.</li>"
+        },
+        "0.2.3": {
+            "ul": "<li>Added floating button to return to the top of the page.</li><li>Add a placeholder when the google note is not available.</li><li>Added notifications when adding and removing books to the library / wishlist.</li>"
+        }
+    }
 }
