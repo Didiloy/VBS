@@ -41,20 +41,20 @@
     <v-card-actions class="justify-end">
       <v-btn v-if="inBib" color="accent" text @click="DelFromBib">
         <v-icon class="accent--text">delete</v-icon>
-        Supprimer</v-btn
+        {{ $t("CardBook.delete") }}</v-btn
       >
       <v-btn v-else-if="inSouhait" color="accent" text @click="DelFromSouhaits">
         <v-icon class="accent--text">delete</v-icon>
-        Supprimer</v-btn
+        {{ $t("CardBook.delete") }}</v-btn
       >
       <v-btn v-else color="accent" text @click="AddToBib">
         <v-icon class="accent--text">favorite</v-icon>
-        Ajouter</v-btn
+        {{ $t("CardBook.add") }}</v-btn
       >
 
       <v-btn color="accent" text @click="Information">
         <v-icon class="accent--text">add</v-icon>
-        informations
+        {{ $t("CardBook.informations") }}
       </v-btn>
     </v-card-actions>
     <v-snackbar
@@ -66,7 +66,9 @@
       content-class="d-flex justify-space-between align-center"
     >
       {{ snackbarText }}
-      <v-btn color="accent" text @click="snackbar = false"> Fermer </v-btn>
+      <v-btn color="accent" text @click="snackbar = false">
+        {{ $t("CardBook.close") }}
+      </v-btn>
     </v-snackbar>
   </v-card>
 </template>
