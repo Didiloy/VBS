@@ -21,9 +21,18 @@
     >
 
     <v-spacer></v-spacer>
+    <select
+      v-model="selected_categorie"
+      class="accent--text pa-1"
+      style="border: 1px solid; border-radius: 5px"
+    >
+      <option v-for="cat in categories" :key="cat" :value="cat">
+        {{ cat }}
+      </option>
+    </select>
     <v-text-field
-      label="Recherche"
-      placeholder="Recherche..."
+      :label="$t('NavBar.search_label')"
+      :placeholder="$t('NavBar.search_placeholder')"
       rounded
       background-color="primary"
       clearable
@@ -51,10 +60,33 @@ export default {
   emits: ["drawerEvent"],
   setup() {
     let textfield = ref("");
-
+    const categories = [
+      "All",
+      "Adult",
+      "Biography",
+      "Children",
+      "Crime",
+      "Fantasy",
+      "Fiction",
+      "Horror",
+      "Humor",
+      "Juvenile Fiction",
+      "Romance",
+      "Manga",
+      "Mistery",
+      "Poetry",
+      "Science",
+      "Young Adult Fiction",
+    ];
+    let selected_categorie = ref("All");
     function search() {
-      router.replace(`/search/${textfield.value}`);
+      selected_categorie.value === "All"
+        ? router.replace(`/search/${textfield.value}`)
+        : router.replace(
+            `/search/${textfield.value}+subject:"${selected_categorie.value}"`
+          );
       textfield.value = "";
+      selected_categorie.value = "All";
     }
     /**
      * Méthode permettant de retourner a la vue HomeView
@@ -67,6 +99,8 @@ export default {
       textfield,
       search,
       goHome,
+      categories,
+      selected_categorie,
     };
   },
 };
