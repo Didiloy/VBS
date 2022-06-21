@@ -86,7 +86,7 @@ export default {
             `/search/${textfield.value}+subject:"${selected_categorie.value}"`
           );
       textfield.value = "";
-      selected_categorie.value = "All";
+      // selected_categorie.value = "All";
     }
     /**
      * Méthode permettant de retourner a la vue HomeView

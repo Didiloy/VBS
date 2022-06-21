@@ -65,7 +65,7 @@
         "title": "Version",
         "version": "Version",
         "0_3": {
-            "ul": "<li>Implémentation de l'api composition de vuejs.</li><li>Ajout du bouton pour toggle la sidebar.</li>"
+            "ul": "<li>Implémentation de l'api composition de vuejs.</li><li>Ajout du bouton pour toggle la sidebar.</li><li>Ajout du sélecteur de catégories pour la recherche.</li><li>Ajout du support pour la langue anglaise.</li>"
         },
         "0_2_5": {
             "ul": "<li>Ajout de skeleton-loader lors du chargement des livres dans la recherche et les recommendations.</li>"
@@ -84,7 +84,7 @@
         "title_4": "Bibliothèque"
     },
     "NavBar": {
-        "search_placeholder": "subject:fiction pour restreindre la recherche",
+        "search_placeholder": "Harry Potter, Harlan Coben",
         "search_label": "Recherche"
     }
 }
