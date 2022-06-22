@@ -83,6 +83,7 @@ export default {
       "Horror",
       "Humor",
       "Juvenile Fiction",
+      "Magic",
       "Religion",
       "Romance",
       "Manga",

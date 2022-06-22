@@ -14,10 +14,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <div class="" style="height: 100%">
+  <div>
     <v-row align="center" justify="space-around" style="height: 100%">
       <v-col
-        cols="6"
+        cols="12"
+        md="6"
         class="d-flex justify-center align-center"
         style="height: 100%"
       >
@@ -26,7 +27,7 @@
           max-width="80%"
           width="80%"
           height="auto"
-          class="pt-5"
+          class="mt-2"
           :src="
             book.volumeInfo.imageLinks
               ? book.volumeInfo.imageLinks.large
@@ -35,9 +36,9 @@
           style="border-radius: 20px !important; object-fit: cover"
         ></v-img>
       </v-col>
-      <v-col cols="6" class="" style="height: 100%">
+      <v-col cols="12" md="6" class="px-8" style="height: 100%">
         <v-row align="center" justify="center">
-          <h1 class="pt-10 text-h3">{{ book.volumeInfo.title }}</h1>
+          <h1 class="pt-5 text-h3">{{ book.volumeInfo.title }}</h1>
         </v-row>
         <v-row align="center" justify="space-around">
           <p
