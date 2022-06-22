@@ -69,7 +69,7 @@ export default {
   emits: ["drawerEvent"],
   setup() {
     let textfield = ref("");
-    let icone_vbs = require("../logo/78986_VBS_flat_RK_04.png");
+    let icone_vbs = require("../assets/logo/78986_VBS_flat_RK_04.png");
     const categories = [
       "All",
       "Adult",

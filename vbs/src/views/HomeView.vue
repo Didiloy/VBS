@@ -148,7 +148,7 @@ export default {
   name: "HomeView",
   data() {
     return {
-      icone_vbs: require("../logo/78986_VBS_flat_RK_04.png"),
+      icone_vbs: require("../assets/logo/78986_VBS_flat_RK_04.png"),
     };
   },
   components: {},
