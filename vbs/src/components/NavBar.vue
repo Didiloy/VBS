@@ -16,9 +16,9 @@
 <template>
   <v-app-bar class="secondary" flat dense app clipped-left>
     <v-app-bar-nav-icon @click="$emit('drawerEvent')"></v-app-bar-nav-icon>
-    <v-toolbar-title class="text-uppercase grey--text" @click="goHome"
-      >vbs</v-toolbar-title
-    >
+    <v-toolbar-title class="text-uppercase grey--text" @click="goHome">
+      <v-img class="" height="100px" width="100px" :src="icone_vbs"></v-img>
+    </v-toolbar-title>
 
     <v-spacer></v-spacer>
     <v-select
@@ -69,6 +69,7 @@ export default {
   emits: ["drawerEvent"],
   setup() {
     let textfield = ref("");
+    let icone_vbs = require("../logo/78986_VBS_flat_RK_04.png");
     const categories = [
       "All",
       "Adult",
@@ -113,6 +114,7 @@ export default {
       goHome,
       categories,
       selected_categorie,
+      icone_vbs,
     };
   },
 };

@@ -16,10 +16,13 @@
 <template>
   <div>
     <v-container class="d-flex flex-column justify-center align-center">
-      <h1 class="grey--text Heading 1 pt-16">
-        {{ $t("HomeView.welcome") }}
-      </h1>
-      <h3 class="grey--text pt-8">
+      <div class="d-flex flex-row justify-center align-center">
+        <!-- <h1 class="grey--text Heading 1 pt-16">
+          {{ $t("HomeView.welcome") }}
+        </h1> -->
+        <v-img class="" height="300px" width="300px" :src="icone_vbs"></v-img>
+      </div>
+      <h3 class="grey--text">
         {{ $t("HomeView.subtitle") }}
       </h3>
       <!-- Big first card -->
@@ -143,6 +146,11 @@
 import router from "../router/index";
 export default {
   name: "HomeView",
+  data() {
+    return {
+      icone_vbs: require("../logo/78986_VBS_flat_RK_04.png"),
+    };
+  },
   components: {},
   methods: {
     search(categorie) {

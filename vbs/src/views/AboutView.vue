@@ -16,7 +16,7 @@
 <template>
   <div class="d-flex flex-column justify-space-between align-center">
     <v-container class="d-flex flex-column justify-center align-start">
-      <v-icon class="grey--text pt-16" x-large> description </v-icon>
+      <v-img class="" height="300px" width="300px" :src="icone_vbs"></v-img>
       <h1 class="grey--text Heading 1 py-2">{{ $t("AboutView.title") }}</h1>
       <p v-html="$t('AboutView.licence')"></p>
       <p v-html="$t('AboutView.find_source_code')"></p>
@@ -41,5 +41,10 @@
 <script>
 export default {
   name: "AboutView",
+  data() {
+    return {
+      icone_vbs: require("../logo/78986_VBS_flat_RK_04.png"),
+    };
+  },
 };
 </script>
