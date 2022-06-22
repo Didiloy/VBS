@@ -5,7 +5,7 @@ Get recommendations for books to read based on your interests and what you alrea
 # TODO
 
 - mots clés dans la 4eme de couverture
-- inteface mobile
+- [ ] inteface mobile
 - sanitize input
 - rentrer soi meme ses mots clés
 - résoudre bug de la recommendation: auteur et genre null

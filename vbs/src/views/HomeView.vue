@@ -20,7 +20,7 @@
         <!-- <h1 class="grey--text Heading 1 pt-16">
           {{ $t("HomeView.welcome") }}
         </h1> -->
-        <v-img class="" height="300px" width="300px" :src="icone_vbs"></v-img>
+        <v-img height="300px" width="300px" :src="icone_vbs"></v-img>
       </div>
       <h3 class="grey--text">
         {{ $t("HomeView.subtitle") }}
@@ -32,18 +32,18 @@
         max-width="100%"
         width="100%"
       >
-        <div class="d-flex align-space-between" width="100%">
-          <div>
+        <v-row class="d-flex align-space-between" width="100%">
+          <v-col cols="12" sm="4" xl="3">
             <v-img
-              width="350px !important"
+              width="100%"
               height="100%"
-              max-width="350px"
+              max-height="300px"
               class="rounded-l-xl"
               src="@/assets/livres_empiles.jpg"
             >
             </v-img>
-          </div>
-          <div class="" width="75% !important">
+          </v-col>
+          <v-col cols="12" sm="8" xl="9" width="75% !important">
             <v-card-text class="text--primary">
               <v-card-title> {{ $t("HomeView.big_card_title") }} </v-card-title>
               <div v-html="$t('HomeView.big_card_body')"></div>
@@ -55,16 +55,16 @@
                 {{ $t("HomeView.big_card_button") }}
               </v-btn>
             </v-card-actions>
-          </div>
-        </div>
+          </v-col>
+        </v-row>
       </v-card>
       <!-- 3 little cards -->
       <div
-        class="d-flex flex-row justify-space-between align-space-around mt-8"
+        class="d-flex flex-row justify-space-between align-space-between mt-8 flex-wrap"
         style="width: 100%"
       >
         <v-card
-          class="mx-auto secondary mt-8 rounded-xl"
+          class="mx-auto secondary mt-8 mx-8 rounded-xl"
           elevation="6"
           max-width="300px"
         >
@@ -89,7 +89,7 @@
           </v-card-actions>
         </v-card>
         <v-card
-          class="mx-auto secondary mt-8 rounded-xl"
+          class="mx-auto secondary mt-8 mx-8 rounded-xl"
           elevation="6"
           max-width="300px"
         >
@@ -113,7 +113,7 @@
           </v-card-actions>
         </v-card>
         <v-card
-          class="mx-auto secondary mt-8 rounded-xl"
+          class="mx-auto secondary mt-8 mx-8 rounded-xl"
           elevation="6"
           max-width="300px"
         >
