@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 
 <template>
-  <v-card class="mx-auto secondary rounded-xl" elevation="6" max-width="380">
+  <v-card class="mx-3 secondary rounded-xl" elevation="6" max-width="380">
     <v-img
       class="white--text align-end"
       height="200px"
@@ -31,7 +31,9 @@
     <v-card-text class="text--primary">
       <div>
         <v-chip-group active-class="accent white--text" column>
-          <v-chip v-for="(cat, i) in cat" :key="i">{{ cat }}</v-chip>
+          <div v-if="cat">
+            <v-chip v-for="(cat, i) in cat" :key="i">{{ cat }}</v-chip>
+          </div>
         </v-chip-group>
       </div>
 
@@ -120,10 +122,12 @@ export default {
     };
   },
   mounted() {
-    if (this.categories.length < 3) {
-      this.cat = [...this.categories];
-    } else {
-      this.cat = this.categories.slice(0, 3);
+    if (this.categories) {
+      if (this.categories.length < 3) {
+        this.cat = [...this.categories];
+      } else {
+        this.cat = this.categories.slice(0, 3);
+      }
     }
   },
   methods: {
