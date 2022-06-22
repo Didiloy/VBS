@@ -64,6 +64,9 @@
     "VersionView": {
         "title": "Version",
         "version": "Version",
+        "0_3_1": {
+            "ul": "<li>Le switch du mode sombre reste dans le bon état même après avoir rechargé la page.</li>"
+        },
         "0_3": {
             "ul": "<li>Implémentation de l'api composition de vuejs.</li><li>Ajout du bouton pour toggle la sidebar.</li><li>Ajout du sélecteur de catégories pour la recherche.</li><li>Ajout du support pour la langue anglaise.</li>"
         },

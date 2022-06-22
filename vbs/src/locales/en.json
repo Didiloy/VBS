@@ -64,6 +64,9 @@
     "VersionView": {
         "title": "Version",
         "version": "Version",
+        "0_3_1": {
+            "ul": "<li>The dark mode switch keep the right state even after reloading.</li>"
+        },
         "0_3": {
             "ul": "<li>Implementing the composition api of vuejs.</li><li> added button to toggle the sidebar.</li></li><li>Added category selector for search.</li><li>Added support for the english language.</li>"
         },
