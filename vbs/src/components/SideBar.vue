@@ -46,6 +46,7 @@
                   inset
                   color="secondary"
                   @click="darkMode()"
+                  v-model="switchDarkMode"
                 ></v-switch>
               </div>
             </div>
@@ -87,7 +88,6 @@ export default {
   },
   setup() {
     const username = ref("");
-    // let drawer = ref(props.drawerEvent);
     const items = ref([
       { title: "Acceuil", icon: "home", path: "/" },
       { title: "Recommandations", icon: "article", path: "/recommandation" },
@@ -115,13 +115,18 @@ export default {
       username,
       darkMode,
       items,
-      // drawer,
     };
   },
   computed: {
     drawer: {
       get: function () {
         return this.drawerEvent;
+      },
+      set: function () {},
+    },
+    switchDarkMode: {
+      get: function () {
+        return this.$vuetify.theme.dark;
       },
       set: function () {},
     },
