@@ -30,7 +30,7 @@
     <img src="vbs\src\assets\logo\78986_VBS_flat_RK_04.png" alt="Logo" width="300" height="300">
   </a>
 
-  <h3 align="center">Vue Book Suggestion :book:</h3>
+  <h3 align="center">Vue Book Suggestion :blue_book: :book:</h3>
 
   <p align="center">
     Have recommendations based on what you have already read !
