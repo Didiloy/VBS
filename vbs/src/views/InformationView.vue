@@ -22,6 +22,7 @@
         class="d-flex justify-center align-center"
         style="height: 100%"
       >
+        <v-btn @click="back">retour</v-btn>
         <v-img
           max-height="80%"
           max-width="80%"
@@ -307,6 +308,9 @@ export default {
       } catch (error) {
         console.warn(error);
       }
+    },
+    back() {
+      router.go(-1);
     },
   },
   watch: {
