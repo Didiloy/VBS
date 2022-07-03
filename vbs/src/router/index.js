@@ -49,12 +49,6 @@ const routes = [{
         props: true,
     },
     {
-        path: "/information",
-        name: "informationview",
-        component: InformationView,
-        props: true,
-    },
-    {
         path: "/recommandation",
         name: "RecommandationView",
         component: RecommendationView,
