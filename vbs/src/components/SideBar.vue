@@ -69,7 +69,7 @@
           <div>
             <v-btn class="accent" to="/about">
               <v-icon class="white--text pr-2"> info</v-icon>
-              A propos
+              {{ $t("SideBar.about") }}
             </v-btn>
           </div>
         </v-card>

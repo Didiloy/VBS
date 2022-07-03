@@ -84,7 +84,8 @@
         "title_1": "Home",
         "title_2": "Recommandations",
         "title_3": "Wishlist",
-        "title_4": "Library"
+        "title_4": "Library",
+        "about": "about"
     },
     "NavBar": {
         "search_placeholder": "Harry Potter, Harlan Coben",
