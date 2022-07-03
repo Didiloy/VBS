@@ -78,6 +78,9 @@
         },
         "0_2_3": {
             "ul": "<li>Added floating button to return to the top of the page.</li><li>Add a placeholder when the google note is not available.</li><li>Added notifications when adding and removing books to the library / wishlist.</li>"
+        },
+        "0_3_2": {
+            "ul": "<li>Changed skeleton-loader when loading books in the recommendations page</li>"
         }
     },
     "SideBar": {
