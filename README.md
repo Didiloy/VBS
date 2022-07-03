@@ -160,7 +160,7 @@ Distributed under the GPLv3 License. See `LICENSE` for more information.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [repo-size-shield]:https://img.shields.io/github/repo-size/didiloy/vbs
-[repo-size-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[repo-size-url]: https://github.com/Didiloy/VBS/graphs/contributors
 [license-shield]: https://img.shields.io/badge/Licence-GPLv3-brightgreen
 [license-url]: https://www.gnu.org/licenses/gpl-3.0.html
 
