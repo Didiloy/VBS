@@ -39,8 +39,8 @@
     <div v-else>
       <div v-if="!authorsBooksComputed">
         <div
-          class="d-flex wrapper"
-          style="overflow-x: auto; height: 350px !important"
+          class="d-flex flex-md-nowrap"
+          style="overflow-x: hidden; height: 350px !important"
         >
           <v-skeleton-loader
             v-bind="attrs"
@@ -114,8 +114,8 @@
     <div v-else>
       <div v-if="!genreBooksComputed">
         <div
-          class="d-flex wrapper"
-          style="overflow-x: auto; height: 350px !important"
+          class="d-flex flex-md-nowrap"
+          style="overflow-x: hidden; height: 350px !important"
         >
           <v-skeleton-loader
             v-bind="attrs"
@@ -202,6 +202,7 @@ export default {
         boilerplate: false,
         elevation: 2,
         width: "350px",
+        "min-width": "350px",
         height: "320px",
         loading: false,
         tile: true,
