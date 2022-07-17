@@ -96,6 +96,17 @@
             </p></a
           >
 
+          <a
+            :href="downloadBookUrl"
+            class="mt-7"
+            style="text-decoration: none; color: accent"
+          >
+            <p>
+              <v-icon class="accent--text">download</v-icon>
+              {{ $t("InformationView.download") }}
+            </p></a
+          >
+
           <v-btn v-if="inBib" class="accent mt-5" text @click="DelFromBib">
             <v-icon class="white--text">delete</v-icon>
             {{ $t("InformationView.delete") }}</v-btn
@@ -159,11 +170,13 @@ export default {
       timeout: 2000,
       snackbarText: "",
       amazonUrl: "",
+      downloadBookUrl: "",
     };
   },
   async mounted() {
     await this.search();
     this.amazonUrl = AMAZON_URL + this.book.volumeInfo.title;
+    this.downloadBookUrl = "https://1lib.fr/s/?q=" + this.book.volumeInfo.title;
   },
   methods: {
     async search() {

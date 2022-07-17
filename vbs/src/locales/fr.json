@@ -30,7 +30,8 @@
         "add": "Ajouter",
         "delete_wishlist": "Supprimer des souhaits",
         "add_wishlist": "Liste de souhaits",
-        "close_snackbar": "Fermer"
+        "close_snackbar": "Fermer",
+        "download": "Télécharger le livre"
     },
     "BibView": {
         "no_books": "Vous n'avez pas encore ajouté de livres à votre bibliothèque.",
@@ -80,7 +81,7 @@
             "ul": "<li>Ajout du bouton flottant pour revenir en haut de la page.</li><li>Ajout d'un placeholder quand la note google n'est pas disponible.</li><li>Ajout de notifications lors de l'ajout et la suppression de livres à la bibliothèque / liste de souhaits.</li>"
         },
         "0_3_2": {
-            "ul": "<li>Changements skeleton-loader pour la page de recommandation sur mobile</li>"
+            "ul": "<li>Changements skeleton-loader pour la page de recommandation sur mobile</li><li>Ajout du lien pour télécharger les livres</li><li>Résolution bug d'un lien mort</li>"
         }
     },
     "SideBar": {
