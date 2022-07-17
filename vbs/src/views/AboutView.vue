@@ -34,7 +34,7 @@
       </p>
     </v-container>
     <p class="grey--text pt-16 text-decoration-underline">
-      <a href="/version"> {{ $t("AboutView.version") }} 0.3.1</a>
+      <a href="/version"> {{ $t("AboutView.version") }} 0.3.2</a>
     </p>
   </div>
 </template>

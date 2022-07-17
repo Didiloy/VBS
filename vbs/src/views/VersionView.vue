@@ -19,6 +19,12 @@
       <h1 class="grey--text Heading 1 py-2">{{ $t("VersionView.title") }}</h1>
       <div class="py-5">
         <h3 class="grey--text Heading 3">
+          {{ $t("VersionView.version") }} 0.3.2:
+        </h3>
+        <ul v-html="$t('VersionView.0_3_2.ul')"></ul>
+      </div>
+      <div class="py-5">
+        <h3 class="grey--text Heading 3">
           {{ $t("VersionView.version") }} 0.3.1:
         </h3>
         <ul v-html="$t('VersionView.0_3_1.ul')"></ul>
