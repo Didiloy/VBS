@@ -30,7 +30,8 @@
         "add": "Add",
         "delete_wishlist": "Delete from wishlist",
         "add_wishlist": "Add to wishlist",
-        "close_snackbar": "Close"
+        "close_snackbar": "Close",
+        "download": "Download the book "
     },
     "BibView": {
         "no_books": "You have not yet added any books to your library.",
