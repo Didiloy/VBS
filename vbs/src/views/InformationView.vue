@@ -87,6 +87,7 @@
         <v-row align="center" justify="space-around" class="py-5">
           <a
             :href="amazonUrl"
+            target="_blank"
             class="mt-7"
             style="text-decoration: none; color: #ac8454"
           >
@@ -98,6 +99,7 @@
 
           <a
             :href="downloadBookUrl"
+            target="_blank"
             class="mt-7"
             style="text-decoration: none; color: accent"
           >
