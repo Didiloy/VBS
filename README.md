@@ -121,9 +121,7 @@ Have ```node``` installed.
 
 - [ ] mots clés dans la 4eme de couverture
 - [ ] inteface mobile
-- [ ] sanitize input
 - [ ] rentrer soi meme ses mots clés
-- [ ] résoudre bug de la recommendation: auteur et genre null
 - [ ] add breadcrumb
 - [ ] add a back arrow on the informations view
 
