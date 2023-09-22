@@ -175,10 +175,12 @@ export default {
       downloadBookUrl: "",
     };
   },
-  async mounted() {
-    await this.search();
-    this.amazonUrl = AMAZON_URL + this.book.volumeInfo.title;
-    this.downloadBookUrl = "https://1lib.fr/s/?q=" + this.book.volumeInfo.title;
+  async created() {
+    await this.search().then(() => {
+      this.amazonUrl = AMAZON_URL + this.book.volumeInfo.title;
+      this.downloadBookUrl =
+        "https://zlibrary-fr.se/s/" + this.book.volumeInfo.title;
+    });
   },
   methods: {
     async search() {
@@ -190,14 +192,11 @@ export default {
         this.InSouhaits();
       });
     },
-    //See the book on amazon
-    GoToAmazon() {
-      window.open(this.amazonUrl);
-    },
     InBib() {
-      let books = localStorage.getItem("vbs-bibliotheque");
-      books = JSON.parse(books);
-      if (books[this.book.id]) {
+      let bib = localStorage.getItem("vbs-bibliotheque");
+      let books = JSON.parse(bib);
+      // console.log(books);
+      if (books !== null && books[this.book.id] !== undefined) {
         // console.log("InBib true ");
         this.inBib = true;
       } else {
@@ -206,9 +205,9 @@ export default {
       }
     },
     InSouhaits() {
-      let books = localStorage.getItem("vbs-souhaits");
-      books = JSON.parse(books);
-      if (books[this.book.id]) {
+      let bib = localStorage.getItem("vbs-souhaits");
+      let books = JSON.parse(bib);
+      if (books !== null && books[this.book.id] !== undefined) {
         // console.log("InSouhait true ");
         this.inSouhaits = true;
       } else {
