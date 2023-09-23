@@ -24,14 +24,14 @@
       >
         <!-- <v-btn @click="back">retour</v-btn> -->
         <v-img
-          max-height="80%"
-          max-width="80%"
-          width="80%"
+          max-height="70%"
+          max-width="70%"
+          width="70%"
           height="auto"
           class="mt-2"
           :src="
             book.volumeInfo.imageLinks
-              ? book.volumeInfo.imageLinks.large
+              ? book.volumeInfo.imageLinks.medium
               : 'https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png'
           "
           style="border-radius: 20px !important; object-fit: cover"
@@ -39,50 +39,66 @@
       </v-col>
       <v-col cols="12" md="6" class="px-8" style="height: 100%">
         <v-row align="center" justify="center">
-          <h1 class="pt-5 text-h3">{{ book.volumeInfo.title }}</h1>
+          <h1 class="pt-5 pb-5 text-h3">{{ book.volumeInfo.title }}</h1>
         </v-row>
-        <v-row align="center" justify="space-around">
-          <p
-            v-for="author in book.volumeInfo.authors"
-            :key="author"
-            class="pt-10 text-h5"
-          >
-            {{ author }}
-          </p>
-          <p class="pt-10 text-body">{{ book.volumeInfo.publishedDate }}</p>
-        </v-row>
-        <v-row align="center" justify="space-around">
-          <v-chip-group active-class="accent white--text" column>
-            <v-chip
-              v-for="n in book.volumeInfo.categories
-                ? book.volumeInfo.categories.length - 1 > 3
-                  ? 3
-                  : book.volumeInfo.categories.length - 1
-                : 0"
-              :key="n"
-              >{{ book.volumeInfo.categories[n] }}</v-chip
+        <v-row
+          cols="12"
+          md="6"
+          class="secondary"
+          style="
+            border-radius: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+          "
+        >
+          <v-row align="center" justify="space-around">
+            <p
+              v-for="author in book.volumeInfo.authors"
+              :key="author"
+              class="pt-10 text-h5"
             >
-          </v-chip-group>
+              {{ author }}
+            </p>
+            <p class="pt-10 text-body">{{ book.volumeInfo.publishedDate }}</p>
+          </v-row>
+          <v-row align="center" justify="space-around">
+            <v-chip-group active-class="onsecondary secondary--text" column>
+              <v-chip
+                v-for="n in book.volumeInfo.categories
+                  ? book.volumeInfo.categories.length - 1 > 3
+                    ? 3
+                    : book.volumeInfo.categories.length - 1
+                  : 0"
+                :key="n"
+                class="onsecondary secondary--text"
+                >{{ book.volumeInfo.categories[n] }}</v-chip
+              >
+            </v-chip-group>
+          </v-row>
+          <v-row align="center" justify="space-around">
+            <p class="pt-10 text-body">
+              {{
+                book.volumeInfo.averageRating !== null &&
+                book.volumeInfo.averageRating !== undefined
+                  ? "Note Google: " + book.volumeInfo.averageRating + "/5"
+                  : "Pas de note pour ce livre."
+              }}
+            </p>
+            <p class="pt-10 text-body">
+              {{ book.volumeInfo.pageCount }}
+              {{ $t("InformationView.nb_page") }}
+            </p>
+          </v-row>
         </v-row>
         <v-row align="center" justify="space-around">
-          <p class="pt-10 text-body">
-            {{
-              book.volumeInfo.averageRating !== null &&
-              book.volumeInfo.averageRating !== undefined
-                ? "Note Google: " + book.volumeInfo.averageRating + "/5"
-                : "Pas de note pour ce livre."
-            }}
-          </p>
-          <p class="pt-10 text-body">
-            {{ book.volumeInfo.pageCount }} {{ $t("InformationView.nb_page") }}
-          </p>
-        </v-row>
-        <v-row align="center" justify="space-around">
-          <span
-            class="pt-10 text-body"
-            v-html="book.volumeInfo.description"
-            style="width: 90%"
-          ></span>
+          <div class="tertiary" style="border-radius: 15px; padding: 15px">
+            <span
+              class="pt-10 text-body"
+              v-html="book.volumeInfo.description"
+              style="width: 90%"
+            ></span>
+          </div>
         </v-row>
         <v-row align="center" justify="space-around" class="py-5">
           <a
@@ -104,31 +120,46 @@
             style="text-decoration: none; color: accent"
           >
             <p>
-              <v-icon class="accent--text">download</v-icon>
+              <v-icon class="onprimary--text">download</v-icon>
               {{ $t("InformationView.download") }}
             </p></a
           >
 
-          <v-btn v-if="inBib" class="accent mt-5" text @click="DelFromBib">
-            <v-icon class="white--text">delete</v-icon>
+          <v-btn
+            v-if="inBib"
+            class="primary mt-5 onprimary--text"
+            rounded
+            @click="DelFromBib"
+          >
+            <v-icon class="onprimary--text">delete</v-icon>
             {{ $t("InformationView.delete") }}</v-btn
           >
-          <v-btn v-else class="accent mt-5" text @click="AddToBib">
-            <v-icon class="white--text">favorite</v-icon>
+          <v-btn
+            v-else
+            class="primary mt-5 onprimary--text"
+            rounded
+            @click="AddToBib"
+          >
+            <v-icon class="onprimary--text">favorite</v-icon>
             {{ $t("InformationView.add") }}</v-btn
           >
           <v-btn
             v-if="inSouhaits"
-            class="accent mt-5"
-            text
+            class="primary mt-5 onprimary--text"
+            rounded
             @click="DelFromSouhaits"
           >
-            <v-icon class="white--text">delete</v-icon
+            <v-icon class="onprimary--text">delete</v-icon
             ><!--Change icon -->
             {{ $t("InformationView.delete_wishlist") }}</v-btn
           >
-          <v-btn v-else class="accent mt-5" text @click="AddToSouhaits">
-            <v-icon class="white--text">playlist_add</v-icon
+          <v-btn
+            v-else
+            class="primary mt-5 onprimary--text"
+            rounded
+            @click="AddToSouhaits"
+          >
+            <v-icon class="onprimary--text">playlist_add</v-icon
             ><!--Change icon -->
             {{ $t("InformationView.add_wishlist") }}</v-btn
           >

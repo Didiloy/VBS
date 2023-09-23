@@ -22,14 +22,14 @@
         </h1> -->
         <v-img height="300px" width="300px" :src="icone_vbs"></v-img>
       </div>
-      <h3 class="grey--text">
+      <h3 class="ontertiary--text">
         {{ $t("HomeView.subtitle") }}
       </h3>
       <!-- Big first card -->
       <v-card
         class="mx-auto secondary mt-8 rounded-xl"
-        elevation="6"
-        max-width="100%"
+        elevation="0"
+        max-width="90%"
         width="100%"
       >
         <v-row class="d-flex align-space-between" width="100%">
@@ -50,8 +50,12 @@
             </v-card-text>
 
             <v-card-actions class="pl-16 justify-end">
-              <v-btn color="accent" text @click="search('inspirational')">
-                <v-icon class="accent--text">favorite</v-icon>
+              <v-btn
+                color="primary onprimary--text"
+                @click="search('inspirational')"
+                rounded
+              >
+                <v-icon class="onprimary--text">favorite</v-icon>
                 {{ $t("HomeView.big_card_button") }}
               </v-btn>
             </v-card-actions>
@@ -65,11 +69,11 @@
       >
         <v-card
           class="mx-auto secondary mt-8 mx-8 rounded-xl"
-          elevation="6"
+          elevation="0"
           max-width="300px"
         >
           <v-img
-            class="white--text align-end"
+            class="onsecondary--text align-end"
             height="200px"
             src="@/assets/livre_cafe_fenetre.jpg"
           >
@@ -82,19 +86,23 @@
           >
 
           <v-card-actions class="justify-end">
-            <v-btn color="accent" text @click="search('fantasy')">
-              <v-icon class="accent--text">rocket_launch</v-icon>
+            <v-btn
+              color="primary onprimary--text"
+              rounded
+              @click="search('fantasy')"
+            >
+              <v-icon class="onprimary--text">rocket_launch</v-icon>
               {{ $t("HomeView.littles_cards.card_1.button") }}
             </v-btn>
           </v-card-actions>
         </v-card>
         <v-card
           class="mx-auto secondary mt-8 mx-8 rounded-xl"
-          elevation="6"
+          elevation="0"
           max-width="300px"
         >
           <v-img
-            class="white--text align-end"
+            class="onsecondary--text align-end"
             height="200px"
             src="@/assets/livre_fenetre_clair.jpg"
           >
@@ -106,19 +114,23 @@
             {{ $t("HomeView.littles_cards.card_2.subtitle") }}
           </v-card-subtitle>
           <v-card-actions class="justify-end">
-            <v-btn color="accent" text @click="search('romance')">
-              <v-icon class="accent--text">favorite</v-icon>
+            <v-btn
+              color="primary onprimary--text"
+              rounded
+              @click="search('romance')"
+            >
+              <v-icon class="onprimary--text">favorite</v-icon>
               {{ $t("HomeView.littles_cards.card_2.button") }}
             </v-btn>
           </v-card-actions>
         </v-card>
         <v-card
           class="mx-auto secondary mt-8 mx-8 rounded-xl"
-          elevation="6"
+          elevation="0"
           max-width="300px"
         >
           <v-img
-            class="white--text align-end"
+            class="onsecondary--text align-end"
             height="200px"
             src="@/assets/bookshelf.jpg"
           >
@@ -130,8 +142,12 @@
             {{ $t("HomeView.littles_cards.card_3.subtitle") }}
           </v-card-subtitle>
           <v-card-actions class="justify-end">
-            <v-btn color="accent" text @click="search('thriller')">
-              <v-icon class="accent--text">question_mark</v-icon>
+            <v-btn
+              color="primary onprimary--text"
+              rounded
+              @click="search('thriller')"
+            >
+              <v-icon class="onprimary--text">question_mark</v-icon>
               {{ $t("HomeView.littles_cards.card_3.button") }}
             </v-btn>
           </v-card-actions>

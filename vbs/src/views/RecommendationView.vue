@@ -20,18 +20,20 @@
     <h1 class="text-h4 ml-5">
       {{ $t("RecommendationView.more_from_author") }}
     </h1>
-    <v-chip-group active-class="accent white--text" column>
-      <v-chip class="ml-5">{{ this.choosenAuthor }}</v-chip>
+    <v-chip-group active-class="onsecondary secondary--text" column>
+      <v-chip class="ml-5 onsecondary secondary--text">{{
+        this.choosenAuthor
+      }}</v-chip>
     </v-chip-group>
     <div v-if="computedNoResultsAuthors">
       <v-container class="d-flex flex-column justify-center align-center">
-        <v-icon class="grey--text pt-16" x-large>
+        <v-icon class="ontertiary--text pt-16" x-large>
           sentiment_very_dissatisfied
         </v-icon>
-        <h1 class="grey--text Heading 1 pt-2">
+        <h1 class="ontertiary--text Heading 1 pt-2">
           {{ $t("RecommendationView.no_book_found") }}
         </h1>
-        <h2 class="grey--text pt-2">
+        <h2 class="ontertiary--text pt-2">
           {{ $t("RecommendationView.refresh_page") }}
         </h2>
       </v-container>
@@ -83,8 +85,12 @@
             }}
           </v-card-title>
           <v-card-actions class="justify-end">
-            <v-btn color="accent" text @click="Information(book.id)">
-              <v-icon class="accent--text">add</v-icon>
+            <v-btn
+              color="onprimary--text primary"
+              rounded
+              @click="Information(book.id)"
+            >
+              <v-icon class="onprimary--text">add</v-icon>
               {{ $t("RecommendationView.button_information") }}
             </v-btn>
           </v-card-actions>
@@ -95,18 +101,20 @@
     <h1 class="text-h4 mt-5 ml-5">
       {{ $t("RecommendationView.more_from_genre") }}
     </h1>
-    <v-chip-group active-class="accent white--text" column>
-      <v-chip class="ml-5">{{ this.choosenCategory }}</v-chip>
+    <v-chip-group active-class="onsecondary secondary--text" column>
+      <v-chip class="ml-5 onsecondary secondary--text">{{
+        this.choosenCategory
+      }}</v-chip>
     </v-chip-group>
     <div v-if="computedNoResultsCategory">
       <v-container class="d-flex flex-column justify-center align-center">
-        <v-icon class="grey--text pt-16" x-large>
+        <v-icon class="ontertiary--text pt-16" x-large>
           sentiment_very_dissatisfied
         </v-icon>
-        <h1 class="grey--text Heading 1 pt-2">
+        <h1 class="ontertiary--text Heading 1 pt-2">
           {{ $t("RecommendationView.no_book_found") }}
         </h1>
-        <h2 class="grey--text pt-2">
+        <h2 class="ontertiary--text pt-2">
           {{ $t("RecommendationView.refresh_page") }}
         </h2>
       </v-container>
@@ -158,8 +166,12 @@
             }}
           </v-card-title>
           <v-card-actions class="justify-end">
-            <v-btn color="accent" text @click="Information(book.id)">
-              <v-icon class="accent--text">add</v-icon>
+            <v-btn
+              color="primary onprimary--text"
+              rounded
+              @click="Information(book.id)"
+            >
+              <v-icon class="onprimary--text">add</v-icon>
               {{ $t("RecommendationView.button_information") }}
             </v-btn>
           </v-card-actions>
@@ -169,13 +181,13 @@
   </div>
   <div v-else>
     <v-container class="d-flex flex-column justify-center align-center">
-      <v-icon class="grey--text pt-16 ic" x-large>
+      <v-icon class="ontertiary--text pt-16 ic" x-large>
         sentiment_very_dissatisfied
       </v-icon>
-      <h1 class="grey--text Heading 1 pt-16">
+      <h1 class="ontertiary--text Heading 1 pt-16">
         {{ $t("RecommendationView.no_book_found") }}
       </h1>
-      <h2 class="grey--text pt-12">
+      <h2 class="ontertiary--text pt-12">
         {{ $t("RecommendationView.refresh_page") }}
       </h2>
     </v-container>
@@ -339,6 +351,6 @@ export default {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--v-accent-base);
+  background: var(--v-onprimary-base);
 }
 </style>

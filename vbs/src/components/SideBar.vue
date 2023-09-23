@@ -14,12 +14,12 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <v-navigation-drawer app class="primary" clipped v-model="drawer">
+  <v-navigation-drawer app class="tertiary" clipped v-model="drawer">
     <v-list nav dense>
-      <v-list-item-group active-class="accent--text text--accent">
+      <v-list-item-group active-class="ontertiary--text text--ontertiary">
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
           <v-list-item-title>
-            <v-icon class="grey--text">{{ items.icon }}</v-icon>
+            <v-icon class="ontertiary--text">{{ items.icon }}</v-icon>
             {{ $t(`SideBar.title_${i + 1}`) }}
           </v-list-item-title>
         </v-list-item>
@@ -27,24 +27,18 @@
     </v-list>
     <template v-slot:append>
       <div class="pa-2">
-        <v-card align="center" class="pa-3 primary">
-          <v-avatar size="40">
-            <v-icon class="grey--text" x-large> account_circle </v-icon>
-          </v-avatar>
-          <div class="d-flex justify-space-around">
-            <div class="mt-4">
-              <p class="grey--text font-italic">{{ username }}</p>
-            </div>
-          </div>
+        <v-card align="center" class="pa-3 tertiary">
           <div class="d-flex justify-space-around">
             <div class="d-flex justify-space-around">
               <div class="mt-4 mr-4">
-                <p class="grey--text"><v-icon>dark_mode</v-icon></p>
+                <p class="ontertiary--text">
+                  <v-icon class="ontertiary--text">dark_mode</v-icon>
+                </p>
               </div>
               <div>
                 <v-switch
                   inset
-                  color="secondary"
+                  color="ontertiary"
                   @click="darkMode()"
                   v-model="switchDarkMode"
                 ></v-switch>
@@ -53,7 +47,7 @@
             <div class="locale-changer mt-4">
               <select
                 v-model="$i18n.locale"
-                class="accent--text pa-1"
+                class="onsecondary--text pa-1 secondary"
                 style="border: 1px solid; border-radius: 5px"
               >
                 <option
@@ -67,8 +61,8 @@
             </div>
           </div>
           <div>
-            <v-btn class="accent" to="/about">
-              <v-icon class="white--text pr-2"> info</v-icon>
+            <v-btn class="ontertiary" to="/about">
+              <v-icon class="tertiary--text pr-2"> info</v-icon>
               {{ $t("SideBar.about") }}
             </v-btn>
           </div>
@@ -87,7 +81,6 @@ export default {
     drawerEvent: Boolean,
   },
   setup() {
-    const username = ref("");
     const items = ref([
       { title: "Acceuil", icon: "home", path: "/" },
       { title: "Recommandations", icon: "article", path: "/recommandation" },
@@ -112,7 +105,6 @@ export default {
     }
 
     return {
-      username,
       darkMode,
       items,
     };

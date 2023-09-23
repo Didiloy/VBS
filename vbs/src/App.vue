@@ -17,7 +17,7 @@
   <v-app>
     <NavBar @drawerEvent="changeDrawerState" />
     <SideBar :drawerEvent="computedDrawer" />
-    <v-main class="primary">
+    <v-main class="neutral">
       <router-view />
       <LayoutToTopFab />
     </v-main>

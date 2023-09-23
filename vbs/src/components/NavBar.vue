@@ -14,9 +14,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <v-app-bar class="secondary" flat dense app clipped-left>
+  <v-app-bar class="tertiary" flat dense app clipped-left>
     <v-app-bar-nav-icon @click="$emit('drawerEvent')"></v-app-bar-nav-icon>
-    <v-toolbar-title class="text-uppercase grey--text" @click="goHome">
+    <v-toolbar-title class="text-uppercase ontertiary--text" @click="goHome">
       <v-img class="" height="100px" width="100px" :src="icone_vbs"></v-img>
     </v-toolbar-title>
 
@@ -26,9 +26,9 @@
       :items="categories"
       outlined
       dense
-      class="accent--text pa-1 shrink mx-2 mt-6"
-      style="width: 10%"
-      item-color="accent"
+      class="ontertiary--text shrink mx-2 tertiary"
+      style="width: 10%; height: 85%"
+      item-color="ontertiary"
     ></v-select>
     <!-- <select
       v-model="selected_categorie"
@@ -43,7 +43,7 @@
       :label="$t('NavBar.search_label')"
       :placeholder="$t('NavBar.search_placeholder')"
       rounded
-      background-color="primary"
+      background-color="secondary"
       clearable
       dense
       hide-details
@@ -53,8 +53,8 @@
       v-on:keyup.enter="search"
     ></v-text-field>
 
-    <v-btn icon class="accent" height="40px" @click="search">
-      <v-icon class="white--text">mdi-magnify</v-icon>
+    <v-btn icon class="onprimary" height="40px" @click="search">
+      <v-icon class="primary--text">mdi-magnify</v-icon>
     </v-btn>
     <!-- add a little spacing -->
     <div></div>
