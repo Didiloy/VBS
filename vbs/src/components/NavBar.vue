@@ -27,7 +27,7 @@
       outlined
       dense
       class="ontertiary--text shrink mx-2 tertiary"
-      style="width: 10%; height: 85%"
+      style="width: 10%; height: 85%; min-width: min-content"
       item-color="ontertiary"
     ></v-select>
     <!-- <select
