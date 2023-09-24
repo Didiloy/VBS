@@ -61,8 +61,8 @@
             </div>
           </div>
           <div>
-            <v-btn class="ontertiary" to="/about">
-              <v-icon class="tertiary--text pr-2"> info</v-icon>
+            <v-btn class="secondary onsecondary--text" to="/about">
+              <v-icon class="onsecondary--text pr-2"> info</v-icon>
               {{ $t("SideBar.about") }}
             </v-btn>
           </div>
