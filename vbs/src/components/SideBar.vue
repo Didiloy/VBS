@@ -14,7 +14,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
-  <v-navigation-drawer app class="tertiary" clipped v-model="drawer">
+  <v-navigation-drawer app class="tertiary" temporary v-model="drawer">
     <v-list nav dense>
       <v-list-item-group active-class="ontertiary--text text--ontertiary">
         <v-list-item v-for="(items, i) in items" :key="i" link :to="items.path">
@@ -75,11 +75,9 @@
 <script>
 /* eslint-disable vue/no-mutating-props */
 import { ref } from "@vue/composition-api";
+import { EventBus } from "./event_bus";
 export default {
   name: "SideBar",
-  props: {
-    drawerEvent: Boolean,
-  },
   setup() {
     const items = ref([
       { title: "Acceuil", icon: "home", path: "/" },
@@ -87,6 +85,12 @@ export default {
       { title: "Liste de souhaits", icon: "playlist_add", path: "/souhaits" },
       { title: "Bibliothèque", icon: "favorite", path: "/bibliotheque" },
     ]);
+
+    const drawer = ref(false);
+
+    EventBus.$on("drawerEvent", () => {
+      drawer.value = !drawer.value;
+    });
 
     function darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
@@ -107,15 +111,10 @@ export default {
     return {
       darkMode,
       items,
+      drawer,
     };
   },
   computed: {
-    drawer: {
-      get: function () {
-        return this.drawerEvent;
-      },
-      set: function () {},
-    },
     switchDarkMode: {
       get: function () {
         return this.$vuetify.theme.dark;

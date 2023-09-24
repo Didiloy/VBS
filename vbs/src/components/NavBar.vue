@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
   <v-app-bar class="tertiary" flat dense app clipped-left>
-    <v-app-bar-nav-icon @click="$emit('drawerEvent')"></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click="emitGlobalEvent"></v-app-bar-nav-icon>
     <v-toolbar-title class="text-uppercase ontertiary--text" @click="goHome">
       <v-img class="" height="100px" width="100px" :src="icone_vbs"></v-img>
     </v-toolbar-title>
@@ -64,9 +64,9 @@
 <script>
 import router from "../router/index";
 import { ref } from "@vue/composition-api";
+import { EventBus } from "./event_bus";
 export default {
   name: "NavBar",
-  emits: ["drawerEvent"],
   setup() {
     let textfield = ref("");
     let icone_vbs = require("../assets/logo/78986_VBS_flat_RK_04.png");
@@ -109,6 +109,10 @@ export default {
       router.replace(`/`);
     }
 
+    function emitGlobalEvent() {
+      EventBus.$emit("drawerEvent");
+    }
+
     return {
       textfield,
       search,
@@ -116,6 +120,7 @@ export default {
       categories,
       selected_categorie,
       icone_vbs,
+      emitGlobalEvent,
     };
   },
 };

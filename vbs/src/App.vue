@@ -15,8 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 <template>
   <v-app>
-    <NavBar @drawerEvent="changeDrawerState" />
-    <SideBar :drawerEvent="computedDrawer" />
+    <NavBar />
+    <SideBar />
     <v-main class="neutral">
       <router-view />
       <LayoutToTopFab />

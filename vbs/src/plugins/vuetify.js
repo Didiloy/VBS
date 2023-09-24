@@ -32,8 +32,10 @@ export default new Vuetify({
     dark: false,
     themes: {
       dark: {
-        primary: "#4C1229",
-        onprimary: "#E6AEC4",
+        // primary: "#4C1229",
+        // onprimary: "#E6AEC4",
+        primary: "#E6AEC4",
+        onprimary: "#DF3578",
         secondary: "#48364C",
         onsecondary: "#E1D0E6",
         tertiary: "#30234C",
