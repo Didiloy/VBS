@@ -19,11 +19,13 @@
   </div>
   <div v-else>
     <v-container class="d-flex flex-column justify-center align-center">
-      <v-icon class="grey--text pt-16" x-large>
+      <v-icon class="ontertiary--text pt-16" x-large>
         sentiment_very_dissatisfied
       </v-icon>
-      <h1 class="grey--text Heading 1 pt-16">{{ $t("BibView.no_books") }}</h1>
-      <h2 class="grey--text pt-12">{{ $t("BibView.search_to_add") }}</h2>
+      <h1 class="ontertiary--text Heading 1 pt-16">
+        {{ $t("BibView.no_books") }}
+      </h1>
+      <h2 class="ontertiary--text pt-12">{{ $t("BibView.search_to_add") }}</h2>
     </v-container>
   </div>
 </template>

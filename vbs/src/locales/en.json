@@ -65,6 +65,9 @@
     "VersionView": {
         "title": "Version",
         "version": "Version",
+        "0_4": {
+            "ul": "<li>Fixed a bug where the amazon and the download link would not work</li><li>Modified the graphic idendity of the application to include more colors and be generally nicer</li><li>fixed a bug where you add to click 2 times on the sidebar button to trigger it</li><li>fixed visual glitch on the category selector</li>"
+        },
         "0_3_1": {
             "ul": "<li>The dark mode switch keep the right state even after reloading.</li><li>Ajout du logo</li>"
         },

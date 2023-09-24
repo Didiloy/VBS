@@ -15,9 +15,9 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
 
 <template>
-  <v-card class="mx-3 secondary rounded-xl" elevation="6" max-width="380">
+  <v-card class="mx-3 secondary rounded-xl" elevation="0" max-width="380">
     <v-img
-      class="white--text align-end"
+      class="onsecondary--text align-end"
       height="200px"
       :src="
         image ||
@@ -30,9 +30,14 @@
 
     <v-card-text class="text--primary">
       <div>
-        <v-chip-group active-class="accent white--text" column>
+        <v-chip-group active-class="onsecondary secondary--text" column>
           <div v-if="cat">
-            <v-chip v-for="(cat, i) in cat" :key="i">{{ cat }}</v-chip>
+            <v-chip
+              v-for="(cat, i) in cat"
+              :key="i"
+              class="onsecondary secondary--text"
+              >{{ cat }}</v-chip
+            >
           </div>
         </v-chip-group>
       </div>
@@ -41,21 +46,31 @@
     </v-card-text>
 
     <v-card-actions class="justify-end">
-      <v-btn v-if="inBib" color="accent" text @click="DelFromBib">
-        <v-icon class="accent--text">delete</v-icon>
+      <v-btn
+        v-if="inBib"
+        color="onprimary--text primary"
+        @click="DelFromBib"
+        rounded
+      >
+        <v-icon class="onprimary--text">delete</v-icon>
         {{ $t("CardBook.delete") }}</v-btn
       >
-      <v-btn v-else-if="inSouhait" color="accent" text @click="DelFromSouhaits">
-        <v-icon class="accent--text">delete</v-icon>
+      <v-btn
+        v-else-if="inSouhait"
+        color="onprimary--text primary"
+        @click="DelFromSouhaits"
+        rounded
+      >
+        <v-icon class="onprimary--text">delete</v-icon>
         {{ $t("CardBook.delete") }}</v-btn
       >
-      <v-btn v-else color="accent" text @click="AddToBib">
-        <v-icon class="accent--text">favorite</v-icon>
+      <v-btn v-else color="onprimary--text primary" @click="AddToBib" rounded>
+        <v-icon class="onprimary--text">favorite</v-icon>
         {{ $t("CardBook.add") }}</v-btn
       >
 
-      <v-btn color="accent" text @click="Information">
-        <v-icon class="accent--text">add</v-icon>
+      <v-btn color="onprimary--text primary" @click="Information" rounded>
+        <v-icon class="onprimary--text">add</v-icon>
         {{ $t("CardBook.informations") }}
       </v-btn>
     </v-card-actions>
@@ -68,7 +83,7 @@
       content-class="d-flex justify-space-between align-center"
     >
       {{ snackbarText }}
-      <v-btn color="accent" text @click="snackbar = false">
+      <v-btn color="primary" text @click="snackbar = false">
         {{ $t("CardBook.close") }}
       </v-btn>
     </v-snackbar>
