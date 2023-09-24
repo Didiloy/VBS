@@ -20,6 +20,20 @@
     </h1>
     <div class="d-flex flex-column justify-center align-start">
       <div
+        class="py-5 tertiary"
+        style="
+          border-radius: 15px;
+          padding: 15px;
+          margin-bottom: 15px;
+          width: 90%;
+        "
+      >
+        <h3 class="ontertiary--text Heading 3">
+          {{ $t("VersionView.version") }} 0.4:
+        </h3>
+        <ul v-html="$t('VersionView.0_4.ul')"></ul>
+      </div>
+      <div
         class="py-5 secondary"
         style="
           border-radius: 15px;

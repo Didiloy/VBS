@@ -60,7 +60,7 @@
     </div>
     <v-chip class="secondary--text onsecondary" style="margin-top: 50px">
       <a href="/#/version" class="secondary--text">
-        {{ $t("AboutView.version") }} 0.3.2</a
+        {{ $t("AboutView.version") }} 0.4</a
       >
     </v-chip>
   </div>

@@ -65,6 +65,9 @@
     "VersionView": {
         "title": "Version",
         "version": "Version",
+        "0_4": {
+            "ul": "<li>Correction d'un bug où les liens amazon et de téléchargement d'un livre ne fonctionnaient pas pour certains livres.</li><li>Modification de la palette de couleur et du style de certains éléments graphiques pour rendre l'application plus jolie. </li><li>Correction d'un bug où il fallait cliquer 2 fois pour déclencher la barre de navigation.</li><li>Correction d'un bug visuel sur le sélecteur de catégories.</li>"
+        },
         "0_3_1": {
             "ul": "<li>Le switch du mode sombre reste dans le bon état même après avoir rechargé la page.</li><li>Ajout du logo</li>"
         },
